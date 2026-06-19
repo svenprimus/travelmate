@@ -14,7 +14,40 @@
     <body>
         <!-- #region header -->
         <header>
-            <nav></nav>
+            <nav>
+                <!-- IMPORTANT: href must be "..index.html" if current HTML is located in ./page -->
+                <a href="index.html">
+                    <img src="./assets/icons/favicon.png" alt="logo-icon" />
+                </a>
+                <ul>
+                    <!-- IMPORTANT: href links must be relative to current HTML file -->
+                    <li>
+                        <!-- TODO: #section-highlights not yet defined -->
+                        <a href="#section-highlights">
+                            <img class="nav-mobile" src="./assets/icons/mobile-home-icon.svg" alt="home button" />
+                            <p class="nav-desktop">Highlights</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/beaches.html">
+                            <img class="nav-mobile" src="./assets/icons/mobile-rocket-icon.svg" alt="rocket button" />
+                            <p class="nav-desktop">Article 1</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/copenhagen.html">
+                            <img class="nav-mobile" src="./assets/icons/mobile-help-icon.svg" alt="help button" />
+                            <p class="nav-desktop">Article 2</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./page/pattaya.html">
+                            <img class="nav-mobile" src="./assets/icons/mobile-contact-icon.svg" alt="contact button" />
+                            <p class="nav-desktop">Article 3</p>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </header>
         <!-- #endregion header -->
 
