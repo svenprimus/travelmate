@@ -95,7 +95,6 @@ footer {
             height: 128px;
             padding: 0px max(calc(50% - 720px), 6px);
             justify-content: flex-start;
-            /* gap: 102px; */
             gap: clamp(32px, 8vw, 102px);
         }
 
@@ -126,15 +125,16 @@ footer {
 /* OPTIONAL media query */
 @media screen and (max-width: 319px) {
     header {
-
         ul {
-            height: clamp(20px, 50vw,70px);
+            height: clamp(20px, 70px * 100vw / 319px, 70px);
             transition: all 0s ease-in-out;
-            gap: clamp(5px, 8vw, 48px);
+
+            /* smooth clamping: (max-size * current-width / max-media-width ) acceleration */
+            gap: clamp(5px, (48px * 100vw / 319px) / 2, 48px);
 
             li img {
-                width: clamp(16px, 15vw, 40px);
-                height: clamp(16px, 15vw, 40px);
+                width: clamp(16px, 40px * 100vw / 319px, 40px);
+                height: clamp(16px, 40px * 100vw / 319px, 40px);
             }
         }
     }
