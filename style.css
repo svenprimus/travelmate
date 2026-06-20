@@ -124,9 +124,10 @@ footer {
 
 /* OPTIONAL media query */
 @media screen and (max-width: 319px) {
+
     header {
         ul {
-            height: clamp(20px, 70px * 100vw / 319px, 70px);
+            height: clamp(20px, calc(88px * 100vw / 319px), 88px);
             transition: all 0s ease-in-out;
 
             /* smooth clamping: (max-size * current-width / max-media-width ) acceleration */
@@ -137,6 +138,10 @@ footer {
                 height: clamp(16px, 40px * 100vw / 319px, 40px);
             }
         }
+    }
+    
+    footer {
+        margin-bottom:  clamp(20px, 88px * 100vw / 319px, 88px);
     }
 }
 /* #endregion media queries */
