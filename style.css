@@ -122,4 +122,21 @@ footer {
         margin-bottom: 0;
     }
 }
+
+/* OPTIONAL media query */
+@media screen and (max-width: 319px) {
+    header {
+
+        ul {
+            height: clamp(20px, 50vw,70px);
+            transition: all 0s ease-in-out;
+            gap: clamp(5px, 8vw, 48px);
+
+            li img {
+                width: clamp(16px, 15vw, 40px);
+                height: clamp(16px, 15vw, 40px);
+            }
+        }
+    }
+}
 /* #endregion media queries */
