@@ -67,8 +67,50 @@ header {
 
 /* #region content-main */
 .content-main {
-    height: 1000px; /* PLACEHOLDER */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* PLACEHOLDER to show difference color between background and content*/
+    height: 2000px;
+    width: 100%;
+    background-color: white;
 }
+
+/* smooth content limitation for content sections with up to 120px padding */
+/* |  |<---------- 1440 ---------->|  | */
+/* |  |            Hero            |  | */
+/* |  |<-120| Content (desk) |120->|  | */
+/* |  |<- 20| Content (mobi) | 20->|  | */
+.content-main-landing {
+    width: 100%;
+    padding: 0 calc(50% - 720px);
+    div {
+        background-color: #f1c953;
+        height: 547px;
+    }
+}
+
+.content-placeholder {
+    height: 100%;
+    width: 100%;
+    padding: 0 max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
+
+    /* PLACEHOLDER for actual content sections */
+    div {
+        background-color: gray;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/* PLACEHOLDER to be removed with actual footer in region footer - here just showing content limit with color */
+footer > .content-placeholder > div {
+    background-color: #808080af;
+    height: 100%;
+    width: 100%;
+}
+
 /* #endregion content-main */
 
 /* #region footer */
@@ -81,7 +123,7 @@ footer {
 
 /* #region media queries */
 @media screen and (min-width: 769px) {
-    /* #region header */
+    /* #region header min-width: 769px */
     .nav-desktop {
         display: contents;
     }
@@ -114,17 +156,21 @@ footer {
             padding-left: 6px;
         }
     }
-    /* #endregion header */
+    /* #endregion header min-width: 769px*/
 
+    /* #region content-main min-width: 769px*/
+    /* #endregion content-main min-width: 769px*/
+
+    /* #region footer min-width: 769px*/
     footer {
         height: 152px;
         margin-bottom: 0;
     }
+    /* #endregion footer min-width: 769px*/
 }
 
 /* OPTIONAL media query */
 @media screen and (max-width: 319px) {
-
     header {
         ul {
             height: clamp(20px, calc(88px * 100vw / 319px), 88px);
@@ -139,9 +185,9 @@ footer {
             }
         }
     }
-    
+
     footer {
-        margin-bottom:  clamp(20px, 88px * 100vw / 319px, 88px);
+        margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
     }
 }
 /* #endregion media queries */
