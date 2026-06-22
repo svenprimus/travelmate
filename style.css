@@ -17,7 +17,7 @@ header {
 
         font-family: 'Arima';
         font-weight: 700;
-        font-size: 24px;
+        font-size: 1.5rem;
 
         color: #f8f5eb;
         text-decoration: none;
@@ -176,7 +176,7 @@ footer {
             height: clamp(20px, calc(88px * 100vw / 319px), 88px);
             transition: all 0s ease-in-out;
 
-            /* smooth clamping: (max-size * current-width / max-media-width ) acceleration */
+            /* smooth clamping: (max-size * current-width / max-media-width ) / acceleration */
             gap: clamp(5px, (48px * 100vw / 319px) / 2, 48px);
 
             li img {
