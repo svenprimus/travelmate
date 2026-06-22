@@ -1,3 +1,24 @@
 :root {
-    /* placeholder     */
+    /* <!-- #region colors --> */
+
+    /* yellow */
+    --color-main1: rgb(78, 164, 135);
+    /* green */
+    --color-main2: rgb(241, 201, 83);
+
+    /* light-green */
+    --color-background: rgba(78, 164, 135, 0.2);
+
+    /* brown */
+    --text-color: rgb(84, 55, 13);
+    /* grey */
+    --paragraph-color: rgb(61, 61, 61);
+
+    /* <!-- #endregion colors --> */
+
+    /* <!-- #region other --> */
+
+    --border-radius-bubble: 30px;
+
+    /* <!-- #endregion colors --> */
 }
