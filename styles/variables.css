@@ -16,9 +16,17 @@
 
     /* <!-- #endregion colors --> */
 
-    /* <!-- #region other --> */
+    /* <!-- #region border radius --> */
 
     --border-radius-bubble: 30px;
 
-    /* <!-- #endregion colors --> */
+    --border-radius-mobile: 30px;
+
+    /* <!-- #endregion border racius --> */
+
+    /* <!-- #region article fonts --> */
+
+    --font-size
+
+    /* <!-- #endregion article fonts --> */
 }
