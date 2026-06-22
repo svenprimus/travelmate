@@ -18,15 +18,28 @@
 
     /* <!-- #region border radius --> */
 
-    --border-radius-bubble: 30px;
-
+    --border-radius-desktop-bubble: 30px;
     --border-radius-mobile: 30px;
 
     /* <!-- #endregion border racius --> */
 
     /* <!-- #region article fonts --> */
 
-    --font-size
+    --font-size-h1-desk: 4rem;
+    --font-size-h2-desk: 1.5rem;
+    --font-size-h3-desk: 2rem;
+    --font-size-header-p-desk: 2rem;
+    --font-size-author-h4-desk: 1.125rem;
+    --font-size-author-p-desk: 1rem;
+    --font-size-p-desk: 1.5rem;
+
+    --font-size-h1-mobile: 2.5rem;
+    --font-size-h2-mobile: 1.25rem;
+    --font-size-h3-mobile: 1.25rem;
+    --font-size-header-p-mobile: 1.125rem;
+    --font-size-author-h4-mobile: 1rem;
+    --font-size-author-p-mobile: 1rem;
+    --font-size-p-mobile: 1rem;
 
     /* <!-- #endregion article fonts --> */
 }
