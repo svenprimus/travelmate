@@ -61,9 +61,19 @@ header {
 }
 
 a:hover {
+    p {
+        color: #f1c953;
+    }
+
     .nav-desktop > img {
         transition: all 200ms ease-in-out;
         opacity: 1;
+    }
+}
+
+a:active {
+    p {
+        color: #f8f5eb;
     }
 }
 
