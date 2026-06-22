@@ -14,13 +14,14 @@ header {
         display: flex;
         align-items: center;
         height: 100%;
-
-        font-family: "Arima";
-        font-weight: 700;
-        font-size: 1.5rem;
-
-        color: #f8f5eb;
         text-decoration: none;
+
+        p {
+            font-family: 'Arima';
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #f8f5eb;
+        }
     }
 
     img {
@@ -59,6 +60,23 @@ header {
     }
 }
 
+a:hover {
+    p {
+        color: #f1c953;
+    }
+
+    .nav-desktop > img {
+        transition: all 200ms ease-in-out;
+        opacity: 1;
+    }
+}
+
+a:active {
+    p {
+        color: #f8f5eb;
+    }
+}
+
 /* mobile-first: do not show desktop version of nav-bar */
 .nav-desktop {
     display: none;
@@ -86,7 +104,6 @@ header {
     width: 100%;
     padding: 0 calc(50% - 720px);
     div {
-        background-color: #f1c953;
         height: 547px;
     }
 }
@@ -125,7 +142,33 @@ footer {
 @media screen and (min-width: 769px) {
     /* #region header min-width: 769px */
     .nav-desktop {
-        display: contents;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        img {
+            position: absolute;
+            object-fit: contain;
+            width: calc(100% + 50px);
+
+            opacity: 0;
+            transition: all 200ms ease-in-out;
+        }
+
+        .hover0 {
+            top: 10px;
+        }
+        .hover1 {
+            bottom: 24px;
+        }
+        .hover2 {
+            top: 20px;
+        }
+        .hover3 {
+            top: -17px;
+            height: 80px;
+        }
     }
 
     .nav-mobile {
