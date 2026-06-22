@@ -59,6 +59,13 @@ header {
         }
     }
 
+    a:hover {
+        .nav-desktop > img {
+            transition: all 200ms ease-in-out;
+            opacity: 1;
+        }
+    }
+
     img {
         height: 56px;
         width: 56px;
@@ -161,7 +168,33 @@ footer {
 @media screen and (min-width: 769px) {
     /* #region header min-width: 769px */
     .nav-desktop {
-        display: contents;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        img {
+            position: absolute;
+            object-fit: contain;
+            width: calc(100% + 50px);
+
+            opacity: 0;
+            transition: all 200ms ease-in-out;
+        }
+
+        .hover0 {
+            top: 10px;
+        }
+        .hover1 {
+            bottom: 24px;
+        }
+        .hover2 {
+            top: 20px;
+        }
+        .hover3 {
+            top: -17px;
+            height: 80px;
+        }
     }
 
     .nav-mobile {
