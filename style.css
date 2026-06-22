@@ -1,0 +1,193 @@
+/* #region global */
+/* #endregion global */
+
+/* #region header */
+header {
+    nav {
+        display: flex;
+        justify-content: center;
+        height: 70px;
+        background-color: #4ea487;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        font-family: 'Arima';
+        font-weight: 700;
+        font-size: 1.5rem;
+
+        color: #f8f5eb;
+        text-decoration: none;
+    }
+
+    img {
+        height: 56px;
+        width: 56px;
+    }
+
+    ul {
+        transition: all 150ms ease-in-out;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: fixed;
+        bottom: 0;
+        z-index: 2;
+
+        width: 100%;
+        height: 88px;
+        gap: 48px;
+
+        background-color: #f1c953;
+        list-style-type: none;
+
+        li {
+            display: flex;
+            height: 100%;
+            align-items: center;
+
+            img {
+                height: 40px;
+                width: 40px;
+            }
+        }
+    }
+}
+
+/* mobile-first: do not show desktop version of nav-bar */
+.nav-desktop {
+    display: none;
+}
+/* #endregion header */
+
+/* #region content-main */
+.content-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* PLACEHOLDER to show difference color between background and content*/
+    height: 2000px;
+    width: 100%;
+    background-color: white;
+}
+
+/* smooth content limitation for content sections with up to 120px padding */
+/* |  |<---------- 1440 ---------->|  | */
+/* |  |            Hero            |  | */
+/* |  |<-120| Content (desk) |120->|  | */
+/* |  |<- 20| Content (mobi) | 20->|  | */
+.content-main-landing {
+    width: 100%;
+    padding: 0 calc(50% - 720px);
+    div {
+        background-color: #f1c953;
+        height: 547px;
+    }
+}
+
+.content-placeholder {
+    height: 100%;
+    width: 100%;
+    padding: 0 max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
+
+    /* PLACEHOLDER for actual content sections */
+    div {
+        background-color: gray;
+        height: 100%;
+        width: 100%;
+    }
+}
+
+/* PLACEHOLDER to be removed with actual footer in region footer - here just showing content limit with color */
+footer > .content-placeholder > div {
+    background-color: #808080af;
+    height: 100%;
+    width: 100%;
+}
+
+/* #endregion content-main */
+
+/* #region footer */
+footer {
+    background-color: #4ea487;
+    height: 134px;
+    margin-bottom: 88px;
+}
+/* #endregion footer */
+
+/* #region media queries */
+@media screen and (min-width: 769px) {
+    /* #region header min-width: 769px */
+    .nav-desktop {
+        display: contents;
+    }
+
+    .nav-mobile {
+        display: none;
+    }
+
+    header {
+        nav {
+            height: 128px;
+            padding: 0px max(calc(50% - 720px), 6px);
+            justify-content: flex-start;
+            gap: clamp(32px, 8vw, 102px);
+        }
+
+        ul {
+            transition: all 0s ease-in-out; /* desktop -> mobile transition only unidirectional */
+
+            position: relative;
+            height: 100%;
+            width: auto;
+            gap: clamp(16px, 6vw, 72px);
+            background-color: #00000000;
+        }
+
+        img {
+            height: 72px;
+            width: 72px;
+            padding-left: 6px;
+        }
+    }
+    /* #endregion header min-width: 769px*/
+
+    /* #region content-main min-width: 769px*/
+    /* #endregion content-main min-width: 769px*/
+
+    /* #region footer min-width: 769px*/
+    footer {
+        height: 152px;
+        margin-bottom: 0;
+    }
+    /* #endregion footer min-width: 769px*/
+}
+
+/* OPTIONAL media query */
+@media screen and (max-width: 319px) {
+    header {
+        ul {
+            height: clamp(20px, calc(88px * 100vw / 319px), 88px);
+            transition: all 0s ease-in-out;
+
+            /* smooth clamping: (max-size * current-width / max-media-width ) / acceleration */
+            gap: clamp(5px, (48px * 100vw / 319px) / 2, 48px);
+
+            li img {
+                width: clamp(16px, 40px * 100vw / 319px, 40px);
+                height: clamp(16px, 40px * 100vw / 319px, 40px);
+            }
+        }
+    }
+
+    footer {
+        margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
+    }
+}
+/* #endregion media queries */
