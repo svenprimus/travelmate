@@ -1,0 +1,35 @@
+/* global definitions for all sub-pages that are not index.html */
+h1 {
+    font-family: 'Arima';
+    font-weight: 700;
+    font-size: 4rem; /* TODO: replace by var */
+    color: #f1c953; /* TODO: replace by var */
+}
+
+h2 {
+    font-family: 'Palanquin';
+    font-weight: 600;
+    font-size: 2.5rem; /* TODO: replace by var */
+    color: #4ea487; /* TODO: replace by var */
+}
+
+h3 {
+    font-family: 'Arima';
+    font-weight: 600;
+    font-size: 2rem; /* TODO: replace by var */
+    color: #54370d; /* TODO: replace by var */
+}
+
+h4 {
+    font-family: 'Arima';
+    font-weight: 700;
+    font-size: 1.125rem; /* TODO: replace by var */
+    color: #54370d; /* TODO: replace by var */
+}
+
+p {
+    font-family: 'Palanquin';
+    font-weight: 400;
+    font-size: 1.5; /* TODO: replace by var */
+    color: #3d3d3d; /* TODO: replace by var */
+}

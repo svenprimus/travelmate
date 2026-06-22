@@ -14,13 +14,14 @@ header {
         display: flex;
         align-items: center;
         height: 100%;
-
-        font-family: "Arima";
-        font-weight: 700;
-        font-size: 1.5rem;
-
-        color: #f8f5eb;
         text-decoration: none;
+
+        p {
+            font-family: 'Arima';
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #f8f5eb;
+        }
     }
 
     img {
@@ -86,7 +87,6 @@ header {
     width: 100%;
     padding: 0 calc(50% - 720px);
     div {
-        background-color: #f1c953;
         height: 547px;
     }
 }

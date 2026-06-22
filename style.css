@@ -1,4 +1,39 @@
 /* #region global */
+/* global definitions for all sub-pages are located in ./styles/page/page-definitions.css */
+h1 {
+    font-family: 'Arima';
+    font-weight: 700;
+    font-size: 3.75rem;
+    color: #54370d; /* TODO: replace by var */
+}
+
+h2 {
+    font-family: 'Arima';
+    font-weight: 700;
+    font-size: 3.25rem;
+    color: #4ea487; /* TODO: replace by var */
+}
+
+h3 {
+    font-family: 'Palanquin Dark';
+    font-weight: 600;
+    font-size: 2rem;
+    color: #ffffff; /* TODO: replace by var */
+}
+
+h4 {
+    font-family: 'Palanquin';
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #54370d; /* TODO: replace by var */
+}
+
+p {
+    font-family: 'Palanquin';
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #54370d; /* TODO: replace by var */
+}
 /* #endregion global */
 
 /* #region header */
@@ -14,13 +49,14 @@ header {
         display: flex;
         align-items: center;
         height: 100%;
-
-        font-family: 'Arima';
-        font-weight: 700;
-        font-size: 1.5rem;
-
-        color: #f8f5eb;
         text-decoration: none;
+
+        p {
+            font-family: 'Arima';
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: #f8f5eb;
+        }
     }
 
     img {
