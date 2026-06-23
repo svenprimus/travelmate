@@ -1,38 +1,44 @@
 /* #region global */
 /* global definitions for all sub-pages are located in ./styles/page/page-definitions.css */
+/* font size variables are only applicable for /page */
 h1 {
     font-family: 'Arima';
     font-weight: 700;
     font-size: 3.75rem;
-    color: #54370d; /* TODO: replace by var */
+    /* NOTE: h1 does not exist in mobile */
+    font-size: clamp(var(--f-size-h1-mobile), calc((3.75rem * 100vw / 840px)), 3.75rem);
+    color: var(--text-color);
 }
 
 h2 {
     font-family: 'Arima';
     font-weight: 700;
-    font-size: 3.25rem;
-    color: #4ea487; /* TODO: replace by var */
+    font-size: clamp(2.5rem, calc((3.25rem * 100vw / 840px)), 3.25rem);
+    color: var(--color-main1);
 }
 
 h3 {
     font-family: 'Palanquin Dark';
     font-weight: 600;
-    font-size: 2rem;
-    color: #ffffff; /* TODO: replace by var */
+    font-size: clamp(1.75rem, calc((3rem * 100vw / 840px)), 3rem);
+    line-height: 100%;
+    color: #ffffff;
 }
 
 h4 {
     font-family: 'Palanquin';
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #54370d; /* TODO: replace by var */
+    font-weight: 400;
+    font-size: clamp(1.25rem, calc((1.75rem * 100vw / 840px)), 1.75rem);
+    line-height: 100%;
+    color: #ffffff;
 }
 
 p {
     font-family: 'Palanquin';
     font-weight: 500;
-    font-size: 1.5rem;
-    color: #54370d; /* TODO: replace by var */
+    font-size: clamp(1rem, calc((1.5rem * 100vw / 840px)), 1.5rem);
+    color: var(--text-color);
+    line-height: 110%;
 }
 /* #endregion global */
 
@@ -42,7 +48,7 @@ header {
         display: flex;
         justify-content: center;
         height: 70px;
-        background-color: #4ea487;
+        background-color: var(--color-main1);
     }
 
     a {
@@ -61,7 +67,7 @@ header {
 
     a:hover {
         p {
-            color: #f1c953;
+            color: var(--color-main2);
         }
 
         .nav-desktop > img {
@@ -96,7 +102,7 @@ header {
         height: 88px;
         gap: 48px;
 
-        background-color: #f1c953;
+        background-color: var(--color-main2);
         list-style-type: none;
 
         li {
@@ -124,10 +130,7 @@ header {
     flex-direction: column;
     align-items: center;
 
-    /* PLACEHOLDER to show difference color between background and content*/
-    height: 2000px;
     width: 100%;
-    background-color: white;
 }
 
 /* smooth content limitation for content sections with up to 120px padding */
@@ -135,26 +138,240 @@ header {
 /* |  |            Hero            |  | */
 /* |  |<-120| Content (desk) |120->|  | */
 /* |  |<- 20| Content (mobi) | 20->|  | */
-.content-main-landing {
+
+.content-main-section {
+    height: 100%;
     width: 100%;
+    padding: 40px max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
+}
+
+.section-landing {
     padding: 0 calc(50% - 720px);
+    padding-bottom: 40px;
+
     div {
-        background-color: #f1c953;
-        height: 547px;
+        background-color: var(--color-main2);
+        height: 100%;
     }
 }
 
-.content-placeholder {
+.section-highlights {
     height: 100%;
     width: 100%;
-    padding: 0 max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
 
-    /* PLACEHOLDER for actual content sections */
-    div {
-        background-color: gray;
-        height: 100%;
-        width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > div {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        padding-bottom: clamp(24px, calc(50px - 32px * 100vw / 769px), 32px);
     }
+
+    > p {
+        text-align: center;
+        display: none;
+        padding-bottom: clamp(0px, calc(88px * 100vw / 1200px) / 1.1, 88px);
+    }
+
+    /* #region faint-radio-slider  */
+    .faint_radio {
+        position: relative;
+        border-top-right-radius: 100px;
+
+        width: 100%;
+        height: var(--fslider-height);
+
+        /* hides the corner radius */
+        overflow: hidden;
+    }
+
+    .faint_radio {
+        display: flex;
+        justify-content: center;
+        /* e.g. (hover(40) - width(28))/2 -> 6px must be removed from target gap */
+        gap: calc(var(--fslider-radio-gap) - calc((var(--fslider-radio-hover-w) - var(--fslider-radio-size)) / 2));
+
+        .radio_space {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            width: var(--fslider-radio-hover-w);
+            height: 100%;
+        }
+
+        input {
+            /* move slider buttons above element layer */
+            z-index: 2;
+
+            appearance: none;
+            background-color: #ffffff;
+            margin: 44px 0;
+            width: var(--fslider-radio-size);
+            height: var(--fslider-radio-size);
+            border-radius: var(--fslider-radio-border-radius);
+        }
+    }
+
+    .faint_radio input:hover {
+        width: var(--fslider-radio-hover-w);
+        background-color: var(--fslider-radio-highlight);
+    }
+
+    /* set up selection */
+    .faint_radio input[type='radio'] {
+        display: grid;
+        place-content: center;
+    }
+
+    /* design selection */
+    .faint_radio input[type='radio']::before {
+        content: '';
+        width: var(--fslider-radio-hover-w);
+        height: var(--fslider-radio-size);
+        border-radius: 20px;
+        transition: 120ms transform ease-in-out;
+
+        /* set the shadow "too big" (overflow circle) and still hide it */
+        box-shadow: inset 2em 2em var(--fslider-radio-highlight);
+        transform: scale(0);
+    }
+
+    /* show selection */
+    .faint_radio input[type='radio']:checked::before {
+        transform: scale(1);
+    }
+
+    .faint_radio_wrapper {
+        width: 100%;
+        height: 100%;
+
+        /* parent is relative, so this will make visibility only to slider area */
+        position: absolute;
+
+        transition: all 0.5s ease-in-out;
+    }
+
+    .faint_radio_element {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: var(--fslider-height);
+            object-fit: cover;
+        }
+    }
+
+    .faint_radio_element_txt {
+        position: absolute;
+        z-index: 1;
+
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        padding: 16px 24px;
+        margin: clamp(54px, calc(375px - 375px * 100vw / 1440px), 93px) clamp(16px, calc(38px * 100vw / 1440px), 38px);
+        text-decoration: none;
+
+        h3 {
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            padding-bottom: 8px;
+        }
+
+        h4 {
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    /* IMPORTANT to manage index for clickable URLs */
+    .element_one {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .element_two,
+    .element_three,
+    .element_four {
+        opacity: 0;
+        z-index: 0;
+    }
+
+    /* we must use :has pseudo selector to reach parent of radion button, else we can't style it with a box */
+    .radio_space:has(input[value='one']:checked) ~ .faint_radio_wrapper {
+        .element_one {
+            opacity: 1;
+            z-index: 1;
+
+            transition: all 0.5s ease-in-out;
+        }
+        .element_two,
+        .element_three,
+        .element_four {
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+
+    .radio_space:has(input[value='two']:checked) ~ .faint_radio_wrapper {
+        .element_two {
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        .element_one,
+        .element_three,
+        .element_four {
+            opacity: 0;
+            z-index: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    .radio_space:has(input[value='three']:checked) ~ .faint_radio_wrapper {
+        .element_three {
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        .element_one,
+        .element_two,
+        .element_four {
+            opacity: 0;
+            z-index: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    .radio_space:has(input[value='four']:checked) ~ .faint_radio_wrapper {
+        .element_four {
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        .element_one,
+        .element_two,
+        .element_three {
+            opacity: 0;
+            z-index: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    /* #endregion faint-radio-slider  */
 }
 
 /* PLACEHOLDER to be removed with actual footer in region footer - here just showing content limit with color */
@@ -168,7 +385,7 @@ footer > .content-placeholder > div {
 
 /* #region footer */
 footer {
-    background-color: #4ea487;
+    background-color: var(--color-main1);
     height: 134px;
     margin-bottom: 88px;
 }
@@ -193,16 +410,16 @@ footer {
         }
 
         .hover0 {
-            top: 10px;
+            top: 5px;
         }
         .hover1 {
-            bottom: 24px;
+            bottom: 19px;
         }
         .hover2 {
-            top: 20px;
+            top: 15px;
         }
         .hover3 {
-            top: -17px;
+            top: -24px;
             height: 80px;
         }
     }
@@ -214,7 +431,7 @@ footer {
     header {
         nav {
             height: 128px;
-            padding: 0px max(calc(50% - 720px), 6px);
+            padding: 0px max(calc(50% - 600px));
             justify-content: flex-start;
             gap: clamp(32px, 8vw, 102px);
         }
@@ -238,6 +455,11 @@ footer {
     /* #endregion header min-width: 769px*/
 
     /* #region content-main min-width: 769px*/
+    .section-highlights {
+        > p {
+            display: block;
+        }
+    }
     /* #endregion content-main min-width: 769px*/
 
     /* #region footer min-width: 769px*/
