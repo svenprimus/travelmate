@@ -261,13 +261,6 @@ header {
     }
 }
 
-/* PLACEHOLDER to be removed with actual footer in region footer - here just showing content limit with color */
-footer > .content-placeholder > div {
-    background-color: #808080af;
-    height: 100%;
-    width: 100%;
-}
-
 /* #endregion content-main */
 
 /* #region footer */
@@ -277,21 +270,26 @@ footer {
     height: 134px;
     margin-bottom: 88px;
     width: 100%;
-    color: white;
-    font-family: "Palanquin";
-    font-size: 1rem;
 
     display: flex;
     justify-content: space-between;
 
-    padding: 16px max(calc(50% - 720px + 120px), clamp(30px, calc((120px * 100vw / 840px) / 2.5), 120px));
-}
+    padding: 24px max(calc(50% - 720px + 120px), clamp(30px, calc((120px * 100vw / 840px) / 2.5), 120px));
 
-footer a {
-    text-decoration: none;
-    color: white;
-    font-family: "Palanquin";
-    font-size: 1rem;
+    p {
+        color: white;
+        /* font-family: "Palanquin"; */
+        font-size: 1rem;
+        line-height: 150%;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: "Palanquin";
+        font-size: 1rem;
+        line-height: 150%;
+    }
 }
 
 .footer-copyright ul {
@@ -321,8 +319,14 @@ footer a {
     gap: clamp(8px, 3.5vw, 16px);
 }
 
-.footer-social img {
-    height: 24px;
+.footer-social {
+    img {
+        height: 24px;
+    }
+    a {
+        display: flex;
+        align-items: center;
+    }
 }
 /* #endregion footer */
 
@@ -419,26 +423,20 @@ footer a {
         font-size: 1.125rem;
     }
 
-    .footer-social img {
-        height: 32px;
+    .footer-social {
+        img {
+            height: 32px;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+        }
     }
     /* #endregion footer min-width: 769px*/
 }
 
-@media screen and (min-width: 320px) and (max-width: 399px) {
-    /* .cookies {
-        display: none;
-    }
-
-    .copyright {
-        order: -2;
-    }
-
-    .footer-copyright {
-        display: flex;
-        align-items: flex-end;
-    } */
-
+@media screen and (min-width: 320px) and (max-width: 374px) {
     footer {
         margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
         display: flex;
