@@ -1,3 +1,55 @@
 :root {
-    /* placeholder     */
+    /* <!-- #region colors --> */
+
+    /* green #4ea487 */
+    --color-main1: rgb(78, 164, 135);
+
+    /* yellow #f1c953 */
+    --color-main2: rgb(241, 201, 83);
+
+    /* light-green #4ea48733 */
+    --color-background: rgba(78, 164, 135, 0.2);
+
+    /* brown #54370d */
+    --text-color: rgb(84, 55, 13);
+
+    /* grey #3d3d3d*/
+    --paragraph-color: rgb(61, 61, 61);
+
+    /* <!-- #endregion colors --> */
+
+    /* <!-- #region border radius --> */
+
+    --border-radius-desktop-bubble: 30px;
+    --border-radius-mobile: 30px;
+
+    /* <!-- #endregion border racius --> */
+
+    /* <!-- #region ARTICLE fonts --> */
+    --f-size-h1-desk: 4rem;
+    --f-size-h2-desk: 2.5rem;
+    --f-size-h3-desk: 2rem;
+    --f-size-header-p-desk: 2rem;
+    --f-size-h4-desk: 1.125rem;
+    --f-size-author-p-desk: 1rem;
+    --f-size-p-desk: 1.5rem;
+
+    --f-size-h1-mobile: 2.5rem;
+    --f-size-h2-mobile: 1.25rem;
+    --f-size-h3-mobile: 1.25rem;
+    --f-size-header-p-mobile: 1.125rem;
+    --f-size-h4-mobile: 1rem;
+    --f-size-author-p-mobile: 1rem;
+    --f-size-p-mobile: 1rem;
+
+    /* <!-- #endregion article fonts --> */
+
+    /* #region faint-radio-slider */
+    --fslider-height: 533px;
+    --fslider-radio-size: 28px;
+    --fslider-radio-border-radius: 20px;
+    --fslider-radio-highlight: #f1c953;
+    --fslider-radio-gap: 22px;
+    --fslider-radio-hover-w: 40px;
+    /* #endregion faint-radio-slider */
 }
