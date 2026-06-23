@@ -2,7 +2,7 @@
 /* global definitions for all sub-pages are located in ./styles/page/page-definitions.css */
 /* font size variables are only applicable for /page */
 h1 {
-    font-family: "Arima";
+    font-family: 'Arima';
     font-weight: 700;
     font-size: 3.75rem;
     /* NOTE: h1 does not exist in mobile */
@@ -11,14 +11,14 @@ h1 {
 }
 
 h2 {
-    font-family: "Arima";
+    font-family: 'Arima';
     font-weight: 700;
     font-size: clamp(2.5rem, calc((3.25rem * 100vw / 840px)), 3.25rem);
     color: var(--color-main1);
 }
 
 h3 {
-    font-family: "Palanquin Dark";
+    font-family: 'Palanquin Dark';
     font-weight: 600;
     font-size: clamp(1.75rem, calc((3rem * 100vw / 840px)), 3rem);
     line-height: 100%;
@@ -26,7 +26,7 @@ h3 {
 }
 
 h4 {
-    font-family: "Palanquin";
+    font-family: 'Palanquin';
     font-weight: 400;
     font-size: clamp(1.25rem, calc((1.75rem * 100vw / 840px)), 1.75rem);
     line-height: 100%;
@@ -34,7 +34,7 @@ h4 {
 }
 
 p {
-    font-family: "Palanquin";
+    font-family: 'Palanquin';
     font-weight: 500;
     font-size: clamp(1rem, calc((1.5rem * 100vw / 840px)), 1.5rem);
     color: var(--text-color);
@@ -58,7 +58,7 @@ header {
         text-decoration: none;
 
         p {
-            font-family: "Arima";
+            font-family: 'Arima';
             font-weight: 700;
             font-size: 1.5rem;
             color: #f8f5eb;
@@ -222,14 +222,14 @@ header {
     }
 
     /* set up selection */
-    .faint_radio input[type="radio"] {
+    .faint_radio input[type='radio'] {
         display: grid;
         place-content: center;
     }
 
     /* design selection */
-    .faint_radio input[type="radio"]::before {
-        content: "";
+    .faint_radio input[type='radio']::before {
+        content: '';
         width: var(--fslider-radio-hover-w);
         height: var(--fslider-radio-size);
         border-radius: 20px;
@@ -241,7 +241,7 @@ header {
     }
 
     /* show selection */
-    .faint_radio input[type="radio"]:checked::before {
+    .faint_radio input[type='radio']:checked::before {
         transform: scale(1);
     }
 
@@ -258,7 +258,120 @@ header {
     .faint_radio_element {
         position: absolute;
         width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: var(--fslider-height);
+            object-fit: cover;
+        }
     }
+
+    .faint_radio_element_txt {
+        position: absolute;
+        z-index: 1;
+
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+
+        padding: 16px 24px;
+        margin: clamp(54px, calc(375px - 375px * 100vw / 1440px), 93px) clamp(16px, calc(38px * 100vw / 1440px), 38px);
+        text-decoration: none;
+
+        h3 {
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            padding-bottom: 8px;
+        }
+
+        h4 {
+            /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+
+    /* IMPORTANT to manage index for clickable URLs */
+    .element_one {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .element_two,
+    .element_three,
+    .element_four {
+        opacity: 0;
+        z-index: 0;
+    }
+
+    /* we must use :has pseudo selector to reach parent of radion button, else we can't style it with a box */
+    .radio_space:has(input[value='one']:checked) ~ .faint_radio_wrapper {
+        .element_one {
+            opacity: 1;
+            z-index: 1;
+
+            transition: all 0.5s ease-in-out;
+        }
+        .element_two,
+        .element_three,
+        .element_four {
+            transition: all 0.5s ease-in-out;
+            opacity: 0;
+            z-index: 0;
+        }
+    }
+
+    .radio_space:has(input[value='two']:checked) ~ .faint_radio_wrapper {
+        .element_two {
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        .element_one,
+        .element_three,
+        .element_four {
+            opacity: 0;
+            z-index: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    .radio_space:has(input[value='three']:checked) ~ .faint_radio_wrapper {
+        .element_three {
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        .element_one,
+        .element_two,
+        .element_four {
+            opacity: 0;
+            z-index: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+    .radio_space:has(input[value='four']:checked) ~ .faint_radio_wrapper {
+        .element_four {
+            opacity: 1;
+            z-index: 1;
+            transition: all 0.5s ease-in-out;
+        }
+        .element_one,
+        .element_two,
+        .element_three {
+            opacity: 0;
+            z-index: 0;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    /* #endregion faint-radio-slider  */
 }
 
 /* #endregion content-main */
@@ -286,7 +399,7 @@ footer {
     a {
         text-decoration: none;
         color: white;
-        font-family: "Palanquin";
+        font-family: 'Palanquin';
         font-size: 1rem;
         line-height: 150%;
     }
