@@ -3,7 +3,7 @@
 
     /* green #4ea487 */
     --color-main1: rgb(78, 164, 135);
-    
+
     /* yellow #f1c953 */
     --color-main2: rgb(241, 201, 83);
 
@@ -26,7 +26,6 @@
     /* <!-- #endregion border racius --> */
 
     /* <!-- #region ARTICLE fonts --> */
-
     --f-size-h1-desk: 4rem;
     --f-size-h2-desk: 2.5rem;
     --f-size-h3-desk: 2rem;
@@ -44,4 +43,13 @@
     --f-size-p-mobile: 1rem;
 
     /* <!-- #endregion article fonts --> */
+
+    /* #region faint-radio-slider */
+    --fslider-height: 533px;
+    --fslider-radio-size: 28px;
+    --fslider-radio-border-radius: 20px;
+    --fslider-radio-highlight: #f1c953;
+    --fslider-radio-gap: 22px;
+    --fslider-radio-hover-w: 40px;
+    /* #endregion faint-radio-slider */
 }
