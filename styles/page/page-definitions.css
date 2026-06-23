@@ -28,7 +28,7 @@ h4 {
     color: var(--text-color);
 }
 
-p {
+p, li {
     font-family: 'Palanquin';
     font-weight: 400;
     font-size: clamp(var(--f-size-p-mobile), calc((var(--f-size-p-desk) * 100vw / 840px)), var(--f-size-p-desk));

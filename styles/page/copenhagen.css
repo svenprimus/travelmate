@@ -110,6 +110,19 @@ header {
     }
 }
 
+.section-text-body {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 100%;
+    gap: clamp(24px, calc(100vw * 32px / 1400px), 32px);
+
+    span {
+        font-weight: 700;
+    }
+}
+
 .section-placeholder {
     height: 100%;
     width: 100%;
