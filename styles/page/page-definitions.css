@@ -4,6 +4,7 @@ h1 {
     font-weight: 700;
     font-size: clamp(var(--f-size-h1-mobile), calc((var(--f-size-h1-desk) * 100vw / 840px)), var(--f-size-h1-desk));
     color: var(--color-main2);
+    line-height: 120%;
 }
 
 h2 {
@@ -32,4 +33,5 @@ p {
     font-weight: 400;
     font-size: clamp(var(--f-size-p-mobile), calc((var(--f-size-p-desk) * 100vw / 840px)), var(--f-size-p-desk));
     color: var(--paragraph-color);
+    line-height: 120%;
 }
