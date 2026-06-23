@@ -4,14 +4,14 @@ h1 {
     font-family: 'Arima';
     font-weight: 700;
     font-size: 3.75rem;
-    color: #54370d; /* TODO: replace by var */
+    color: var(--text-color); /* TODO: replace by var */
 }
 
 h2 {
     font-family: 'Arima';
     font-weight: 700;
     font-size: 3.25rem;
-    color: #4ea487; /* TODO: replace by var */
+    color: var(--color-main1); /* TODO: replace by var */
 }
 
 h3 {
@@ -25,14 +25,14 @@ h4 {
     font-family: 'Palanquin';
     font-weight: 700;
     font-size: 1.5rem;
-    color: #54370d; /* TODO: replace by var */
+    color: var(--text-color); /* TODO: replace by var */
 }
 
 p {
     font-family: 'Palanquin';
     font-weight: 500;
     font-size: 1.5rem;
-    color: #54370d; /* TODO: replace by var */
+    color: var(--text-color); /* TODO: replace by var */
 }
 /* #endregion global */
 
@@ -42,7 +42,7 @@ header {
         display: flex;
         justify-content: center;
         height: 70px;
-        background-color: #4ea487;
+        background-color: var(--color-main1);
     }
 
     a {
@@ -61,7 +61,7 @@ header {
 
     a:hover {
         p {
-            color: #f1c953;
+            color: var(--color-main2);
         }
 
         .nav-desktop > img {
@@ -96,7 +96,7 @@ header {
         height: 88px;
         gap: 48px;
 
-        background-color: #f1c953;
+        background-color: var(--color-main2);
         list-style-type: none;
 
         li {
@@ -139,7 +139,7 @@ header {
     width: 100%;
     padding: 0 calc(50% - 720px);
     div {
-        background-color: #f1c953;
+        background-color: var(--color-main2);
         height: 547px;
     }
 }
@@ -168,7 +168,7 @@ footer > .content-placeholder > div {
 
 /* #region footer */
 footer {
-    background-color: #4ea487;
+    background-color: var(--color-main1);
     height: 134px;
     margin-bottom: 88px;
 }

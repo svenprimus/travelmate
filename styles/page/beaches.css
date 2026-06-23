@@ -7,7 +7,7 @@ header {
         display: flex;
         justify-content: center;
         height: 70px;
-        background-color: #4ea487;
+        background-color: var(--color-main1);
     }
 
     a {
@@ -44,7 +44,7 @@ header {
         height: 88px;
         gap: 48px;
 
-        background-color: #f1c953;
+        background-color: var(--color-main2);
         list-style-type: none;
 
         li {
@@ -62,7 +62,7 @@ header {
 
 a:hover {
     p {
-        color: #f1c953;
+        color: var(--color-main2);
     }
 
     .nav-desktop > img {
@@ -132,7 +132,7 @@ footer > .content-placeholder > div {
 
 /* #region footer */
 footer {
-    background-color: #4ea487;
+    background-color: var(--color-main1);
     height: 134px;
     margin-bottom: 88px;
 }

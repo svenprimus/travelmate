@@ -2,34 +2,34 @@
 h1 {
     font-family: 'Arima';
     font-weight: 700;
-    font-size: 4rem; /* TODO: replace by var */
-    color: #f1c953; /* TODO: replace by var */
+    font-size: clamp(var(--f-size-h1-mobile), calc((var(--f-size-h1-desk) * 100vw / 840px)), var(--f-size-h1-desk));
+    color: var(--color-main2);
 }
 
 h2 {
     font-family: 'Palanquin';
     font-weight: 600;
-    font-size: 2.5rem; /* TODO: replace by var */
-    color: #4ea487; /* TODO: replace by var */
+    font-size: clamp(var(--f-size-h2-mobile), calc((var(--f-size-h2-desk) * 100vw / 840px)), var(--f-size-h2-desk));
+    color: var(--color-main1);
 }
 
 h3 {
     font-family: 'Arima';
     font-weight: 600;
-    font-size: 2rem; /* TODO: replace by var */
-    color: #54370d; /* TODO: replace by var */
+    font-size: clamp(var(--f-size-h3-mobile), calc((var(--f-size-h3-desk) * 100vw / 840px)), var(--f-size-h3-desk));
+    color: var(--text-color);
 }
 
 h4 {
     font-family: 'Arima';
     font-weight: 700;
-    font-size: 1.125rem; /* TODO: replace by var */
-    color: #54370d; /* TODO: replace by var */
+    font-size: clamp(var(--f-size-h4-mobile), calc((var(--f-size-h4-desk) * 100vw / 840px)), var(--f-size-h4-desk));
+    color: var(--text-color);
 }
 
 p {
     font-family: 'Palanquin';
     font-weight: 400;
-    font-size: 1.5; /* TODO: replace by var */
-    color: #3d3d3d; /* TODO: replace by var */
+    font-size: clamp(var(--f-size-p-mobile), calc((var(--f-size-p-desk) * 100vw / 840px)), var(--f-size-p-desk));
+    color: var(--paragraph-color);
 }
