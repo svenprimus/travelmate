@@ -214,7 +214,7 @@ footer {
     header {
         nav {
             height: 128px;
-            padding: 0px max(calc(50% - 720px), 6px);
+            padding: 0px max(calc(50% - 600px));
             justify-content: flex-start;
             gap: clamp(32px, 8vw, 102px);
         }
