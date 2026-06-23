@@ -162,9 +162,9 @@ header {
         border-radius: 10px;
         height: 66px;
         width: 196px;
-        
+
         transform: rotate(-12deg);
-        top: -10px;
+        top: -12px;
 
         p {
             color: var(--color-main2);
@@ -182,8 +182,7 @@ header {
         background-color: var(--color-background);
         border-radius: 30px;
 
-        /* TODO: needs improvement */
-        padding: 24px 16px 24px 16px;
+        padding: clamp(24px, calc(26px * 100vw / 1400px), 26px) clamp(23px, calc(32px * 100vw / 900px), 50px);
 
         a {
             text-decoration: none;
