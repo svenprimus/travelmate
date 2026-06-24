@@ -14,7 +14,7 @@ header {
         text-decoration: none;
 
         p {
-            font-family: 'Arima';
+            font-family: "Arima";
             font-weight: 700;
             font-size: 1.5rem;
             color: #f8f5eb;
@@ -102,28 +102,70 @@ header {
 }
 
 .section-header {
-    padding-top: 80px;
-
-    div {
-        background-color: var(--color-main1);
-        height: 100%;
-    }
-}
-
-.section-placeholder {
+    padding-top: 24px;
     height: 100%;
     width: 100%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: left;
+    gap: 24px;
+
+    > div {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+.section-author {
+    /* height: 500px; */
+    width: 100%;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-mobile);
+
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    gap: 16px;
+    padding: 16px 8px;
+
+    p,
+    h4 {
+        text-align: center;
+    }
+
+    .title {
+        font-weight: normal;
+        line-height: 110%;
+    }
+
+    .name {
+        gap: 0;
+        line-height: 110%;
+    }
+}
+
+aside {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
 
     div {
-        /* placeholder */
-        height: 500px;
-        width: 100%;
-        background-color: grey;
+        display: flex;
+        gap: 6px;
+    }
+    .date img {
+        width: 16px;
+    }
+    .reading-time img {
+        width: 20px;
+    }
+    .read img {
+        width: 20px;
     }
 }
 
