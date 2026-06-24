@@ -105,14 +105,22 @@ header {
     padding-top: 24px;
     height: 100%;
     width: 100%;
-
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: left;
     gap: 24px;
 
     > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        gap: 24px;
+    }
+
+    h2 {
+        line-height: 120%;
+    }
+    .header-text {
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -121,7 +129,6 @@ header {
 }
 
 .section-author {
-    /* height: 500px; */
     width: 100%;
     background-color: var(--color-background);
     border-radius: var(--border-radius-mobile);
@@ -156,6 +163,7 @@ aside {
 
     div {
         display: flex;
+        flex-direction: row;
         gap: 6px;
     }
     .date img {
@@ -310,11 +318,46 @@ footer {
     /* #endregion header min-width: 769px*/
 
     /* #region content-main min-width: 769px*/
+    .content-main {
+        display: flex;
+        flex-direction: column;
+        padding-top: 80px;
+    }
+
+    .section-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+            font-size: 2rem;
+            width: 95%;
+        }
+
+        aside p {
+            font-size: 1rem;
+        }
+
+        .section-author {
+            padding: 16px 16px;
+            width: 45%;
+
+            p {
+                font-size: 1rem;
+                text-align: left;
+            }
+            .name {
+                gap: 6px;
+            }
+        }
+    }
+
     .section-highlights {
         > p {
             display: block;
         }
     }
+
     /* #endregion content-main min-width: 769px*/
 
     /* #region footer min-width: 769px*/
