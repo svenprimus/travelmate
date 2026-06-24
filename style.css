@@ -167,8 +167,13 @@ header {
     > div {
         display: flex;
         justify-content: center;
+        align-items: center;
         gap: 8px;
         padding-bottom: clamp(24px, calc(50px - 32px * 100vw / 769px), 32px);
+        img {
+            height: clamp(40px, calc(100vw * 48px / 769px), 48px);
+            width: clamp(40px, calc(100vw * 48px / 769px), 48px);
+        }
     }
 
     > p {
@@ -560,11 +565,23 @@ footer {
         margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
 
         div {
-            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+
+            .footer-copyright {
+                align-items: flex-start;
+                ul {
+                    .cookies {
+                        display: none;
+                    }
+                    .copyright {
+                        order: -2;
+                    }
+                }
+            }
+
             .footer-social {
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: flex-end;
                 align-items: space-between;
                 width: 100%;
             }
@@ -589,19 +606,56 @@ footer {
         }
     }
 
+    .section-highlights > div {
+        img {
+            width: clamp(16px, 40px * 100vw / 319px, 40px);
+            height: clamp(16px, 40px * 100vw / 319px, 40px);
+        }
+    }
+
     footer {
         margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
+        height: clamp(80px, calc(134px * 100vw / 319px), 134px);
+        padding: 0;
 
         div {
-            align-items: center;
+            flex-direction: column;
+            gap: 5px;
+            .footer-copyright {
+                align-items: center;
+
+                ul {
+                    .cookies {
+                        display: none;
+                    }
+                    .copyright {
+                        order: -2;
+                    }
+                    a,
+                    p {
+                        font-size: clamp(0.5rem, calc((1rem * 100vw / 319px)), 1rem);
+                    }
+                }
+            }
+
             .footer-social {
                 flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: flex-end;
-                align-items: space-between;
+                justify-content: center;
+                /* align-items: space-between; */
+                align-items: flex-start;
+
                 width: 100%;
+                img {
+                    width: clamp(16px, 32px * 100vw / 319px, 32px);
+                }
             }
         }
+    }
+
+    h1,
+    h2,
+    h3 {
+        font-size: clamp(1rem, calc((var(--f-size-h1-mobile) * 100vw / 319px)), var(--f-size-h1-mobile));
     }
 }
 /* #endregion media queries */
