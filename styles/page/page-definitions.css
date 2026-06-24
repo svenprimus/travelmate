@@ -1,6 +1,6 @@
 /* global definitions for all sub-pages that are not index.html */
 h1 {
-    font-family: 'Arima';
+    font-family: "Arima";
     font-weight: 700;
     font-size: clamp(var(--f-size-h1-mobile), calc((var(--f-size-h1-desk) * 100vw / 840px)), var(--f-size-h1-desk));
     color: var(--color-main2);
@@ -8,30 +8,40 @@ h1 {
 }
 
 h2 {
-    font-family: 'Palanquin';
+    font-family: "Palanquin";
     font-weight: 600;
     font-size: clamp(var(--f-size-h2-mobile), calc((var(--f-size-h2-desk) * 100vw / 840px)), var(--f-size-h2-desk));
     color: var(--color-main1);
 }
 
 h3 {
-    font-family: 'Arima';
+    font-family: "Arima";
     font-weight: 600;
     font-size: clamp(var(--f-size-h3-mobile), calc((var(--f-size-h3-desk) * 100vw / 840px)), var(--f-size-h3-desk));
     color: var(--text-color);
 }
 
 h4 {
-    font-family: 'Arima';
+    font-family: "Arima";
     font-weight: 700;
     font-size: clamp(var(--f-size-h4-mobile), calc((var(--f-size-h4-desk) * 100vw / 840px)), var(--f-size-h4-desk));
     color: var(--text-color);
 }
 
-p, li, a {
-    font-family: 'Palanquin';
+p,
+li,
+a {
+    font-family: "Palanquin";
     font-weight: 400;
     font-size: clamp(var(--f-size-p-mobile), calc((var(--f-size-p-desk) * 100vw / 840px)), var(--f-size-p-desk));
-    color: var(--paragraph-color);
+    color: var(--text-color);
     line-height: 120%;
+}
+
+@media screen and (min-width: 769px) {
+    p,
+    li,
+    a {
+        color: var(--paragraph-color);
+    }
 }
