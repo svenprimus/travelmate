@@ -2,7 +2,7 @@
 /* global definitions for all sub-pages are located in ./styles/page/page-definitions.css */
 /* font size variables are only applicable for /page */
 h1 {
-    font-family: 'Arima';
+    font-family: "Arima";
     font-weight: 700;
     font-size: 3.75rem;
     /* NOTE: h1 does not exist in mobile */
@@ -11,14 +11,14 @@ h1 {
 }
 
 h2 {
-    font-family: 'Arima';
+    font-family: "Arima";
     font-weight: 700;
     font-size: clamp(2.5rem, calc((3.25rem * 100vw / 840px)), 3.25rem);
     color: var(--color-main1);
 }
 
 h3 {
-    font-family: 'Palanquin Dark';
+    font-family: "Palanquin Dark";
     font-weight: 600;
     font-size: clamp(1.75rem, calc((3rem * 100vw / 840px)), 3rem);
     line-height: 100%;
@@ -26,7 +26,7 @@ h3 {
 }
 
 h4 {
-    font-family: 'Palanquin';
+    font-family: "Palanquin";
     font-weight: 400;
     font-size: clamp(1.25rem, calc((1.75rem * 100vw / 840px)), 1.75rem);
     line-height: 100%;
@@ -34,7 +34,7 @@ h4 {
 }
 
 p {
-    font-family: 'Palanquin';
+    font-family: "Palanquin";
     font-weight: 500;
     font-size: clamp(1rem, calc((1.5rem * 100vw / 840px)), 1.5rem);
     color: var(--text-color);
@@ -58,7 +58,7 @@ header {
         text-decoration: none;
 
         p {
-            font-family: 'Arima';
+            font-family: "Arima";
             font-weight: 700;
             font-size: 1.5rem;
             color: #f8f5eb;
@@ -222,14 +222,14 @@ header {
     }
 
     /* set up selection */
-    .faint_radio input[type='radio'] {
+    .faint_radio input[type="radio"] {
         display: grid;
         place-content: center;
     }
 
     /* design selection */
-    .faint_radio input[type='radio']::before {
-        content: '';
+    .faint_radio input[type="radio"]::before {
+        content: "";
         width: var(--fslider-radio-hover-w);
         height: var(--fslider-radio-size);
         border-radius: 20px;
@@ -241,7 +241,7 @@ header {
     }
 
     /* show selection */
-    .faint_radio input[type='radio']:checked::before {
+    .faint_radio input[type="radio"]:checked::before {
         transform: scale(1);
     }
 
@@ -311,7 +311,7 @@ header {
     }
 
     /* we must use :has pseudo selector to reach parent of radion button, else we can't style it with a box */
-    .radio_space:has(input[value='one']:checked) ~ .faint_radio_wrapper {
+    .radio_space:has(input[value="one"]:checked) ~ .faint_radio_wrapper {
         .element_one {
             opacity: 1;
             z-index: 1;
@@ -327,7 +327,7 @@ header {
         }
     }
 
-    .radio_space:has(input[value='two']:checked) ~ .faint_radio_wrapper {
+    .radio_space:has(input[value="two"]:checked) ~ .faint_radio_wrapper {
         .element_two {
             opacity: 1;
             z-index: 1;
@@ -342,7 +342,7 @@ header {
         }
     }
 
-    .radio_space:has(input[value='three']:checked) ~ .faint_radio_wrapper {
+    .radio_space:has(input[value="three"]:checked) ~ .faint_radio_wrapper {
         .element_three {
             opacity: 1;
             z-index: 1;
@@ -357,7 +357,7 @@ header {
         }
     }
 
-    .radio_space:has(input[value='four']:checked) ~ .faint_radio_wrapper {
+    .radio_space:has(input[value="four"]:checked) ~ .faint_radio_wrapper {
         .element_four {
             opacity: 1;
             z-index: 1;
@@ -385,7 +385,6 @@ footer {
     width: 100%;
     padding: 24px max(calc(50% - 720px + 120px), clamp(30px, calc((120px * 100vw / 840px) / 2.5), 120px));
     display: flex;
-    justify-content: space-between;
     align-items: center;
 
     div {
@@ -403,7 +402,7 @@ footer {
     a {
         text-decoration: none;
         color: white;
-        font-family: 'Palanquin';
+        font-family: "Palanquin";
         font-size: 1rem;
     }
 
@@ -434,7 +433,7 @@ footer {
         align-items: flex-end;
         justify-content: flex-end;
         width: 200px;
-        gap: 16px;
+        gap: clamp(8px, 3.5vw, 16px);
 
         img {
             height: 24px;
@@ -559,31 +558,16 @@ footer {
 @media screen and (min-width: 320px) and (max-width: 374px) {
     footer {
         margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
 
-        .footer-copyright {
-            width: 100%;
-
-            ul {
-                list-style-type: none;
-                display: flex;
+        div {
+            align-items: center;
+            .footer-social {
                 flex-direction: row;
-                justify-content: space-around;
-
-                .cookies {
-                    display: none;
-                }
-                .copyright {
-                    order: -2;
-                }
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-items: space-between;
+                width: 100%;
             }
-        }
-        .footer-social {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
         }
     }
 }
@@ -607,30 +591,16 @@ footer {
 
     footer {
         margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
-        display: flex;
-        flex-direction: column;
 
-        .footer-copyright {
-            width: 100%;
-
-            ul {
-                list-style-type: none;
-                display: flex;
+        div {
+            align-items: center;
+            .footer-social {
                 flex-direction: row;
-                justify-content: space-around;
-
-                .cookies {
-                    display: none;
-                }
-                .copyright {
-                    order: -2;
-                }
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-items: space-between;
+                width: 100%;
             }
-        }
-        .footer-social {
-            display: flex;
-            justify-content: space-around;
-            width: 100%;
         }
     }
 }
