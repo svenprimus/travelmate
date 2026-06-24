@@ -15,35 +15,44 @@
         <!-- #region header -->
         <header>
             <nav>
-                <!-- IMPORTANT: href must be "..index.html" if current HTML is located in ./page -->
                 <a href="index.html">
                     <img src="./assets/icons/favicon.png" alt="logo-icon" />
                 </a>
                 <ul>
-                    <!-- IMPORTANT: href links must be relative to current HTML file -->
                     <li>
-                        <!-- TODO: #section-highlights not yet defined -->
-                        <a href="#section-highlights">
+                        <a href="index.html#section-highlights">
                             <img class="nav-mobile" src="./assets/icons/mobile-home-icon.svg" alt="home button" />
-                            <p class="nav-desktop">Highlights</p>
+                            <div class="nav-desktop">
+                                <p>Highlights</p>
+                                <img class="hover0" src="./assets/icons/hover-0.png" alt="hover-0" />
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="./page/beaches.html">
                             <img class="nav-mobile" src="./assets/icons/mobile-rocket-icon.svg" alt="rocket button" />
-                            <p class="nav-desktop">Article 1</p>
+                            <div class="nav-desktop">
+                                <p>Article 1</p>
+                                <img class="hover1" src="./assets/icons/hover-1.png" alt="hover-1" />
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="./page/copenhagen.html">
                             <img class="nav-mobile" src="./assets/icons/mobile-help-icon.svg" alt="help button" />
-                            <p class="nav-desktop">Article 2</p>
+                            <div class="nav-desktop">
+                                <p>Article 2</p>
+                                <img class="hover2" src="./assets/icons/hover-2.png" alt="hover-2" />
+                            </div>
                         </a>
                     </li>
                     <li>
                         <a href="./page/pattaya.html">
                             <img class="nav-mobile" src="./assets/icons/mobile-contact-icon.svg" alt="contact button" />
-                            <p class="nav-desktop">Article 3</p>
+                            <div class="nav-desktop">
+                                <p>Article 3</p>
+                                <img class="hover3" src="./assets/icons/hover-3.png" alt="hover-3" />
+                            </div>
                         </a>
                     </li>
                 </ul>
@@ -53,13 +62,88 @@
 
         <!-- #region content-main -->
         <section class="content-main">
-            <!-- placeholder to test content limit -->
-            <section class="content-main-landing">
-                <div></div>
+            <section class="content-main-section section-landing">
+                <div>
+                    <!-- placeholder to test content limit -->
+                    <h1>Cappadocia</h1>
+                </div>
             </section>
-            <div class="content-placeholder">
-                <div></div>
-            </div>
+            <section id="section-highlights" class="content-main-section section-highlights">
+                <!-- <section class="content-main-highlights"> -->
+                <div>
+                    <img src="./assets/icons/rocket-yellow-icon.svg" alt="rocket-icon" />
+                    <h2>Highlights</h2>
+                </div>
+                <p>
+                    From the vibrant cultures of Asia to the sun-drenched islands of the Caribbean and the serene
+                    landscapes of Scandinavia, each destination offers a distinct way to explore the world.
+                </p>
+                <!-- #region faint-radio-slider -->
+                <section class="faint_radio">
+                    <!-- four exclusive radio buttons -->
+                    <!-- give them extra spacing for hover effekt -->
+                    <div class="radio_space">
+                        <input type="radio" name="slider" value="one" checked />
+                    </div>
+                    <div class="radio_space">
+                        <input type="radio" name="slider" value="two" />
+                    </div>
+                    <div class="radio_space">
+                        <input type="radio" name="slider" value="three" />
+                    </div>
+                    <div class="radio_space">
+                        <input type="radio" name="slider" value="four" />
+                    </div>
+
+                    <div class="faint_radio_wrapper">
+                        <article class="faint_radio_element element_one">
+                            <a class="faint_radio_element_txt" href="./page/beaches.html">
+                                <h3>The World's Most Breathtaking Beaches</h3>
+                                <h4>
+                                    From powder-soft white sands to dramatic coastlines kissed by turquoise waves, these
+                                    beaches are more than destinations — they're feelings.
+                                </h4>
+                            </a>
+                            <img src="./assets/img/beaches-img-0.jpg" alt="beach-image" />
+                        </article>
+
+                        <article class="faint_radio_element element_two">
+                            <a class="faint_radio_element_txt" href="./page/copenhagen.html">
+                                <h3>Copenhagen in 3 Days: Big Experiences, Smart Spending</h3>
+                                <h4>
+                                    Discover Copenhagen, where historic charm meets modern design, vibrant cycling
+                                    culture and waterfront living.
+                                </h4>
+                            </a>
+                            <img src="./assets/img/copenhagen.jpg" alt="copenhagen-image" />
+                        </article>
+
+                        <article class="faint_radio_element element_three">
+                            <a class="faint_radio_element_txt" href="./page/pattaya.html">
+                                <h3>Pattaya Pulse: Food, Sun and Neon Lights</h3>
+                                <h4>
+                                    From bustling promenades to nearby islands, the city offers an energetic and diverse
+                                    escape. Discover Pattaya City, with vibrand nightlife and rich cultural landmarks.
+                                </h4>
+                            </a>
+                            <img src="./assets/img/pattaya.jpg" alt="pattaya-sanctuary-of-truth-image" />
+                        </article>
+
+                        <article class="faint_radio_element element_four">
+                            <a class="faint_radio_element_txt" href="https://de.wikipedia.org/wiki/Fuji_(Vulkan)">
+                                <h3>Mountain Fuji</h3>
+                                <h4>
+                                    The most iconic mountain and an active volcano located about 100 kilometers
+                                    southwest of Tokyo. Written with the characters for "wealth" and "samurai", Fuji's
+                                    name evokes a sense of strength, honor, and enduring prestige.
+                                </h4>
+                            </a>
+                            <img src="./assets/img/fuji.jpg" alt="mountain-fuji-tempel-image" />
+                        </article>
+                    </div>
+                </section>
+                <!-- #endregion faint-radio-slider -->
+            </section>
         </section>
         <!-- #endregion content-main -->
 
@@ -82,16 +166,16 @@
                 </div>
             </div>
             <div class="footer-social">
-                <a href="https://www.tiktok.com/de-DE/">
-                    <img class="tiktok" src="./assets/icons/socials-tiktok-icon.svg" alt="tiktok-icon"
+                <a href="https://www.tiktok.com/de-DE/" target="_blank">
+                    <img src="./assets/icons/socials-tiktok-icon.svg" alt="tiktok-icon"
                 /></a>
-                <a href="https://www.youtube.com/">
-                    <img class="youtube" src="./assets/icons/socials-youtube-icon.svg" alt="youtube-icon"
+                <a href="https://www.youtube.com/" target="_blank">
+                    <img src="./assets/icons/socials-youtube-icon.svg" alt="youtube-icon"
                 /></a>
-                <a href="https://www.facebook.com/">
-                    <img class="facebook" src="./assets/icons/socials-facebook-icon.svg" alt="facebook-icon"
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="./assets/icons/socials-facebook-icon.svg" alt="facebook-icon"
                 /></a>
-                <a href="https://www.instagram.com/">
+                <a href="https://www.instagram.com/" target="_blank">
                     <img src="./assets/icons/socials-instagram-icon.svg" alt="instagram-icon"
                 /></a>
             </div>
