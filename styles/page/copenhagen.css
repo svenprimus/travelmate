@@ -155,7 +155,7 @@ header {
     }
 }
 
-aside {
+.header-facts {
     width: 100%;
     display: flex;
     gap: clamp(16px, calc((100vw - 400px) * 16px / 1000px + 16px), 32px);
