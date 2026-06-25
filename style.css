@@ -142,6 +142,7 @@ header {
 .content-main-section {
     height: 100%;
     width: 100%;
+    /* padding desktop/mobile top/bottom 80px -> 40px & left/right 120px -> 20px */
     padding: 40px max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
 }
 
