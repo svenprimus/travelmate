@@ -211,6 +211,9 @@ header {
     height: 100%;
     width: 100%;
 
+    /* as in other clamps: use linear function f(x) = m(x-x0)+y0 with m = (y2 - y1) / (x2 - x1)*/
+    padding: 0 clamp(0px, calc((100vw - 400px) * 33.5px / (1400px - 400px)), 33.5px);
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -219,7 +222,7 @@ header {
     position: relative;
 
     .pro-tipps-icon {
-        position: absolute;
+        /* position: absolute; */
         display: flex;
         align-items: center;
         justify-content: center;
@@ -231,7 +234,8 @@ header {
         width: 196px;
 
         transform: rotate(-12deg);
-        top: -12px;
+        top: 6px;
+        /* left: 0px; */
 
         p {
             color: var(--color-main2);
@@ -245,11 +249,17 @@ header {
         }
     }
 
+    .pro-tipps-ol-spacing {
+        padding-left: clamp(0px, calc(100vw - 400px) * (50px / 1000px), 50px);
+    }
+
     ol {
         background-color: var(--color-background);
         border-radius: 30px;
 
-        padding: clamp(24px, calc(26px * 100vw / 1400px), 26px) clamp(23px, calc(32px * 100vw / 900px), 50px);
+        /* school was a while ago... f(x) = (x-x1) * (y2 - y1) / (x2 - x1) + y1 */
+        padding: clamp(24px, calc((100vw - 400px) * 2px / 1000px + 24px), 26px)
+            clamp(23px, calc(32px * 100vw / 900px), 50px);
 
         a {
             text-decoration: none;
