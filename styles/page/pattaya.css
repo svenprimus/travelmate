@@ -98,7 +98,9 @@ header {
 .content-main-section {
     height: 100%;
     width: 100%;
-    padding: 44px max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
+    /* padding desktop/mobile top/bottom 88px -> 40px & left/right 120px -> 20px */
+    padding: clamp(20px, calc((100vw - 400px) * 24px / 1000px + 20px), 44px)
+        max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
 }
 
 .section-header {
