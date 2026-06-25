@@ -85,6 +85,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* gap: 40px; */
 
     width: 100%;
 }
@@ -177,14 +178,6 @@ aside {
     }
 }
 
-.section-video {
-    /* PLACEHOLDER -> insert video here (iframe)*/
-    div {
-        height: 520px;
-        background-color: grey;
-    }
-}
-
 .section-text-body {
     display: flex;
     flex-direction: column;
@@ -204,6 +197,20 @@ aside {
 
     span {
         font-weight: 700;
+    }
+    .video {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        iframe {
+            width: min(100%, 930px);
+            aspect-ratio: 16/9;
+            display: flex;
+            border-radius: var(--border-radius-mobile);
+            border-width: 0;
+            object-fit: contain;
+        }
     }
 }
 
