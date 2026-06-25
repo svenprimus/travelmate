@@ -8,6 +8,7 @@ h1 {
     /* NOTE: h1 does not exist in mobile */
     font-size: clamp(var(--f-size-h1-mobile), calc((3.75rem * 100vw / 840px)), 3.75rem);
     color: var(--text-color);
+    line-height: 120%;
 }
 
 h2 {
@@ -663,6 +664,7 @@ footer {
             justify-content: center;
             height: 100%;
             width: 32%;
+            gap: 32px;
 
             padding-left: clamp(20px, calc((100vw - 400px) * (100px) / (1040px) + 20px), 120px);
 
