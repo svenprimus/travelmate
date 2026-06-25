@@ -379,6 +379,88 @@ header {
     /* #endregion faint-radio-slider  */
 }
 
+/* #region FAQ */
+
+.section-faq {
+    width: 100%;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    .faq-top {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 8px;
+
+        h2 {
+            line-height: 110%;
+        }
+
+        img {
+            width: 40px;
+        }
+    }
+
+    .faq-cards {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        details {
+            background-color: var(--color-main2);
+            border-radius: 12px;
+            font-family: "Palanquin";
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-color);
+            padding: 16px 14px;
+            line-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        summary {
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+            list-style: none;
+            align-items: center;
+            line-height: 100%;
+        }
+
+        summary::after {
+            display: flex;
+            content: "";
+            height: 24px;
+            width: 24px;
+            flex-shrink: 0;
+            background-image: url("./assets/icons/faq-arrow.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            transition: transform 0.5s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        p {
+            background-color: white;
+            border-radius: 5px;
+            line-height: 120%;
+            margin-top: 8px;
+            padding: 4px 10px;
+            font-size: 1rem;
+        }
+    }
+}
+
+/* #endregion FAQ */
+
 /* #endregion content-main */
 
 /* #region footer */
@@ -526,6 +608,20 @@ footer {
             display: block;
         }
     }
+
+    .section-faq {
+        gap: 48px;
+
+        .faq-top {
+            img {
+                width: 48px;
+            }
+        }
+    }
+    summary {
+        font-size: 1.5rem;
+    }
+
     /* #endregion content-main min-width: 769px*/
 
     /* #region footer min-width: 769px*/
