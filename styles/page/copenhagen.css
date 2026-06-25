@@ -102,11 +102,78 @@ header {
 }
 
 .section-header {
-    padding-top: 80px;
+    padding-top: 24px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: left;
+        gap: 24px;
+    }
+
+    h2 {
+        line-height: 120%;
+    }
+    .header-text {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+.section-author {
+    width: 100%;
+    background-color: var(--color-background);
+    border-radius: var(--border-radius-mobile);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 8px;
+
+    p,
+    h4 {
+        text-align: center;
+    }
+
+    .title {
+        font-weight: 400;
+        line-height: 110%;
+    }
+
+    .name {
+        gap: 0;
+        line-height: 110%;
+    }
+}
+
+aside {
+    width: 100%;
+    display: flex;
+    gap: clamp(16px, calc((100vw - 400px) * 16px / 1000px + 16px), 32px);
+    flex-wrap: wrap;
 
     div {
-        background-color: var(--color-main1);
-        height: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 6px;
+    }
+    .date img {
+        width: 16px;
+    }
+    .reading-time img {
+        width: 20px;
+    }
+    .read img {
+        width: 20px;
     }
 }
 
@@ -144,9 +211,6 @@ header {
     height: 100%;
     width: 100%;
 
-    /* as in other clamps: use linear function f(x) = m(x-x0)+y0 with m = (y2 - y1) / (x2 - x1)*/
-    padding: 0 clamp(0px, calc((100vw - 400px) * 33.5px / (1400px - 400px)), 33.5px);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -155,7 +219,7 @@ header {
     position: relative;
 
     .pro-tipps-icon {
-        /* position: absolute; */
+        position: absolute;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -167,8 +231,7 @@ header {
         width: 196px;
 
         transform: rotate(-12deg);
-        top: 6px;
-        /* left: 0px; */
+        top: -12px;
 
         p {
             color: var(--color-main2);
@@ -182,17 +245,11 @@ header {
         }
     }
 
-    .pro-tipps-ol-spacing {
-        padding-left: clamp(0px, calc(100vw - 400px) * (50px / 1000px), 50px);
-    }
-
     ol {
         background-color: var(--color-background);
         border-radius: 30px;
 
-        /* school was a while ago... f(x) = (x-x1) * (y2 - y1) / (x2 - x1) + y1 */
-        padding: clamp(24px, calc((100vw - 400px) * 2px / 1000px + 24px), 26px)
-            clamp(23px, calc(32px * 100vw / 900px), 50px);
+        padding: clamp(24px, calc(26px * 100vw / 1400px), 26px) clamp(23px, calc(32px * 100vw / 900px), 50px);
 
         a {
             text-decoration: none;
@@ -344,6 +401,40 @@ footer {
     /* #endregion header min-width: 769px*/
 
     /* #region content-main min-width: 769px*/
+    .content-main {
+        display: flex;
+        flex-direction: column;
+        padding-top: 80px;
+    }
+
+    .section-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        p {
+            font-size: 2rem;
+            width: 95%;
+        }
+
+        aside p {
+            font-size: 1rem;
+        }
+
+        .section-author {
+            padding: 16px 16px;
+            width: 45%;
+
+            p {
+                font-size: 1rem;
+                text-align: left;
+            }
+            .name {
+                gap: 6px;
+            }
+        }
+    }
+
     .section-highlights {
         > p {
             display: block;

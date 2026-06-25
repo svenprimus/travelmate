@@ -278,9 +278,7 @@ header {
 
         background: rgba(255, 255, 255, 0.2);
         backdrop-filter: blur(5px);
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-
+        border: 1px solid rgba(255, 255, 255, 0.3);
 
         padding: 16px 24px;
         margin: clamp(54px, calc(375px - 375px * 100vw / 1440px), 93px) clamp(16px, calc(38px * 100vw / 1440px), 38px);
