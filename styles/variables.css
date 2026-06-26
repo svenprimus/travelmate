@@ -50,9 +50,11 @@
     /* #region faint-radio-slider */
     --fslider-height: 533px;
     --fslider-radio-size: 28px;
+    --rslider-radio-size: 22px;
     --fslider-radio-border-radius: 20px;
     --fslider-radio-highlight: #f1c953;
     --fslider-radio-gap: 22px;
+    --rslider-radio-gap: 8px;
     --fslider-radio-hover-w: 40px;
     /* #endregion faint-radio-slider */
 }
