@@ -111,7 +111,7 @@ footer {
 
 @media screen and (min-width: 320px) and (max-width: 374px) {
     footer {
-        margin-bottom: clamp(20px, 88px * 100vw / 319px, 88px);
+        margin-bottom: clamp(20px, calc(100vw * 68 / 319 + 20px), 88px);
 
         div {
             flex-direction: column;

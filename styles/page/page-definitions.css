@@ -73,10 +73,6 @@ a {
     a {
         color: var(--paragraph-color);
     }
-
-    .content-main {
-        padding-top: 80px;
-    }
 }
 
 /* OPTIONAL media query */
@@ -84,7 +80,7 @@ a {
     h1,
     h2,
     h3 {
-        font-size: clamp(1rem, calc(100vw * (4 - 1) / 52.5 + 1rem), (var(--f-size-h1-mobile)));
+        font-size: clamp(1rem, calc(100vw * (2.5 - 1) / 52.5 + 1rem), (var(--f-size-h1-mobile)));
     }
 }
 /* #endregion media queries */

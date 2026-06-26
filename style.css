@@ -398,10 +398,6 @@ p {
 
 /* #region media queries */
 @media screen and (min-width: 1441px) {
-    .content-main-section {
-        padding: 40px max(calc(50% - 720px + 120px), 120px);
-    }
-
     .section-landing {
         padding: 0 calc(50% - 720px);
 

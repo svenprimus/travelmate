@@ -15,5 +15,12 @@
     height: 100%;
     width: 100%;
     /* padding desktop/mobile top/bottom 80px -> 40px & left/right 120px -> 20px */
-    padding: 40px clamp(20px, calc((100vw - 400px) * 100 / 840 + 20px), 120px);
+    padding: clamp(24px, calc((100vw - 400px) * (80 - 24) / 1000 + 24px), 80px)
+        clamp(20px, calc((100vw - 400px) * 100 / 840 + 20px), 120px);
+}
+
+@media screen and (min-width: 1441px) {
+    .content-main-section {
+        padding: 40px max(calc(50% - 720px + 120px), 120px);
+    }
 }
