@@ -19,6 +19,7 @@ h3 {
     font-weight: 600;
     font-size: clamp(var(--f-size-h3-mobile), calc((var(--f-size-h3-desk) * 100vw / 840px)), var(--f-size-h3-desk));
     color: var(--text-color);
+    line-height: 120%;
 }
 
 h4 {
