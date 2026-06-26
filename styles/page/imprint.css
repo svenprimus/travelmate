@@ -1,24 +1,4 @@
 /* #region content-main */
-.content-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 100%;
-}
-
-/* smooth content limitation for content sections with up to 120px padding */
-/* |  |<---------- 1440 ---------->|  | */
-/* |  |            Hero            |  | */
-/* |  |<-120| Content (desk) |120->|  | */
-/* |  |<- 20| Content (mobi) | 20->|  | */
-
-.content-main-section {
-    height: 100%;
-    width: 100%;
-    padding: 44px max(calc(50% - 720px + 120px), clamp(20px, calc((120px * 100vw / 840px) / 2.5), 120px));
-}
-
 .section-header {
     padding-top: 80px;
 
