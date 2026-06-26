@@ -7,7 +7,6 @@ h1 {
     font-size: 3.75rem;
     /* NOTE: h1 does not exist in mobile */
     font-size: clamp(var(--f-size-h1-mobile), calc((100vw - 25rem) * 1 / 52.5 + var(--f-size-h1-mobile)), 3.75rem);
-
     color: var(--text-color);
     line-height: 120%;
 }
@@ -43,7 +42,6 @@ p {
     line-height: 110%;
 }
 /* #endregion global */
-
 
 /* #region content-main */
 .section-landing {
@@ -398,7 +396,6 @@ p {
 
 /* #endregion content-main */
 
-
 /* #region media queries */
 @media screen and (min-width: 1441px) {
     .content-main-section {
@@ -486,7 +483,7 @@ p {
     h1,
     h2,
     h3 {
-        font-size: clamp(1rem, calc(100vw * (var(--f-size-h1-mobile) - 1rem) / 319 + 1rem), (var(--f-size-h1-mobile)));
+        font-size: clamp(1rem, calc(100vw * (4 - 1) / 52.5 + 1rem), (var(--f-size-h1-mobile)));
     }
 }
 /* #endregion media queries */

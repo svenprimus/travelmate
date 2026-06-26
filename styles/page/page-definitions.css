@@ -1,8 +1,14 @@
 /* global definitions for all sub-pages that are not index.html */
+/* NOTE: clamp diff-size cant be done with variables */
 h1 {
     font-family: "Arima";
     font-weight: 700;
-    font-size: clamp(var(--f-size-h1-mobile), calc((var(--f-size-h1-desk) * 100vw / 840px)), var(--f-size-h1-desk));
+    font-size: clamp(
+        var(--f-size-h1-mobile),
+        calc(100vw * (4 - 2.5) / 52.5 + var(--f-size-h1-mobile)),
+        var(--f-size-h1-desk)
+    );
+
     color: var(--color-main2);
     line-height: 120%;
 }
@@ -10,7 +16,12 @@ h1 {
 h2 {
     font-family: "Palanquin";
     font-weight: 600;
-    font-size: clamp(var(--f-size-h2-mobile), calc((var(--f-size-h2-desk) * 100vw / 840px)), var(--f-size-h2-desk));
+    font-size: clamp(
+        var(--f-size-h2-mobile),
+        calc(100vw * (2.5 - 1.25) / 52.5 + var(--f-size-h2-mobile)),
+        var(--f-size-h2-desk)
+    );
+
     color: var(--color-main1);
 }
 
@@ -18,6 +29,12 @@ h3 {
     font-family: "Arima";
     font-weight: 600;
     font-size: clamp(var(--f-size-h3-mobile), calc((var(--f-size-h3-desk) * 100vw / 840px)), var(--f-size-h3-desk));
+    font-size: clamp(
+        var(--f-size-h3-mobile),
+        calc(100vw * (2 - 1.25) / 52.5 + var(--f-size-h3-mobile)),
+        var(--f-size-h3-desk)
+    );
+
     color: var(--text-color);
     line-height: 120%;
 }
@@ -26,6 +43,11 @@ h4 {
     font-family: "Arima";
     font-weight: 700;
     font-size: clamp(var(--f-size-h4-mobile), calc((var(--f-size-h4-desk) * 100vw / 840px)), var(--f-size-h4-desk));
+    font-size: clamp(
+        var(--f-size-h4-mobile),
+        calc(100vw * (1.125 - 1) / 52.5 + var(--f-size-h4-mobile)),
+        var(--f-size-h4-desk)
+    );
     color: var(--text-color);
 }
 
@@ -35,6 +57,11 @@ a {
     font-family: "Palanquin";
     font-weight: 400;
     font-size: clamp(var(--f-size-p-mobile), calc((var(--f-size-p-desk) * 100vw / 840px)), var(--f-size-p-desk));
+    font-size: clamp(
+        var(--f-size-p-mobile),
+        calc(100vw * (1.5 - 1) / 52.5 + var(--f-size-p-mobile)),
+        var(--f-size-p-desk)
+    );
     color: var(--text-color);
     line-height: 120%;
 }

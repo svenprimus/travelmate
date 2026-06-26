@@ -54,17 +54,10 @@
 
 /* OPTIONAL media query */
 @media screen and (max-width: 319px) {
-    .section-highlights > div {
-        img {
-            width: clamp(16px, 40px * 100vw / 319px, 40px);
-            height: clamp(16px, 40px * 100vw / 319px, 40px);
-        }
-    }
-
     h1,
     h2,
     h3 {
-        font-size: clamp(1rem, calc((var(--f-size-h1-mobile) * 100vw / 319px)), var(--f-size-h1-mobile));
+        font-size: clamp(1rem, calc(100vw * (4 - 1) / 52.5 + 1rem), (var(--f-size-h1-mobile)));
     }
 }
 /* #endregion media queries */
