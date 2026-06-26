@@ -321,6 +321,7 @@ header {
         h3 {
             /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp */
             display: -webkit-box;
+            line-clamp: 3;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
@@ -330,6 +331,7 @@ header {
         h4 {
             /* https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/line-clamp */
             display: -webkit-box;
+            line-clamp: 3;
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
