@@ -30,34 +30,10 @@
 
 /* #region media queries */
 @media screen and (min-width: 769px) {
-    p,
-    li,
-    a {
-        color: var(--paragraph-color);
-    }
-
-    /* #region content-main min-width: 769px*/
-    .content-main {
-        display: flex;
-        flex-direction: column;
-        padding-top: 80px;
-    }
-
     .section-article {
         article {
             gap: 88px;
         }
-    }
-
-    /* #endregion content-main min-width: 769px*/
-}
-
-/* OPTIONAL media query */
-@media screen and (max-width: 319px) {
-    h1,
-    h2,
-    h3 {
-        font-size: clamp(1rem, calc(100vw * (4 - 1) / 52.5 + 1rem), (var(--f-size-h1-mobile)));
     }
 }
 /* #endregion media queries */

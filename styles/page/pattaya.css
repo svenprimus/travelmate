@@ -7,8 +7,8 @@
 
     img {
         /* school was a while ago... f(x) = (x-x1) * (y2 - y1) / (x2 - x1) + y1 */
-        width: clamp(343px, (100vw - 400px) * (640px - 343px) / (700px - 400px) + 343px, 640px);
-        border-radius: clamp(30px, (100vw - 400px) * (53px - 30px) / (700px - 400px) + 30px, 53px);
+        width: clamp(343px, (100vw - 400px) * (640 - 343) / (700 - 400) + 343px, 640px);
+        border-radius: clamp(30px, (100vw - 400px) * (53 - 30) / (700 - 400) + 30px, 53px);
         box-shadow: -2px 4px 11.6px 0px #00000040;
     }
 }
@@ -19,14 +19,15 @@
     justify-content: space-around;
     flex-wrap: wrap;
 
-    gap: clamp(32px, (100vw - 400px) * (80px - 32px) / (1400px - 400px) + 32px, 80px);
+    gap: clamp(32px, (100vw - 400px) * (80 - 32) / (1400 - 400) + 32px, 80px);
 
     div {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: clamp(16px, (100vw - 400px) * (24px - 16px) / (1400px - 400px) + 16px, 24px);
+        gap: clamp(16px, (100vw - 400px) * (24 - 16) / (1400 - 400) + 16px, 24px);
+
         p {
             height: 200px;
             width: 100%;
@@ -34,11 +35,11 @@
 
         p,
         img {
-            width: clamp(343px, (100vw - 400px) * (520px - 343px) / (700px - 400px) + 343px, 520px);
+            width: clamp(343px, (100vw - 400px) * (520 - 343) / (700 - 400) + 343px, 520px);
         }
         img {
-            height: clamp(311px, (100vw - 400px) * (470px - 311px) / (1400px - 400px) + 311px, 470px);
-            border-radius: clamp(30px, (100vw - 400px) * (53px - 30px) / (700px - 400px) + 30px, 53px);
+            height: clamp(311px, (100vw - 400px) * (470 - 311) / (1400 - 400) + 311px, 470px);
+            border-radius: clamp(30px, (100vw - 400px) * (53 - 30) / (700 - 400) + 30px, 53px);
             box-shadow: -2px 4px 11.6px 0px #00000040;
             object-fit: contain;
         }
@@ -51,23 +52,6 @@
         /* gap handled by space-around */
         gap: 0px;
     }
-}
-
-@media screen and (min-width: 769px) {
-    p,
-    li,
-    a {
-        color: var(--paragraph-color);
-    }
-
-    /* #region content-main min-width: 769px*/
-
-    .content-main {
-        display: flex;
-        flex-direction: column;
-        padding-top: 80px;
-    }
-    /* #endregion content-main min-width: 769px*/
 }
 
 @media screen and (min-width: 320px) and (max-width: 374px) {
@@ -100,12 +84,6 @@
                 width: 80vw;
             }
         }
-    }
-
-    h1,
-    h2,
-    h3 {
-        font-size: clamp(1rem, calc(100vw * (4 - 1) / 52.5 + 1rem), (var(--f-size-h1-mobile)));
     }
 }
 /* #endregion media queries */
