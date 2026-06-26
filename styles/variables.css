@@ -10,6 +10,9 @@
     /* light-green #4ea48733 */
     --color-background: rgba(78, 164, 135, 0.2);
 
+    /* very light-green ##4EA4874D */
+    --color-bg-rslider: rgba(78, 164, 135, 0.302);
+    
     /* brown #54370d */
     --text-color: rgb(84, 55, 13);
 
