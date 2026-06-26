@@ -642,9 +642,9 @@ footer {
     header {
         nav {
             height: 128px;
-            padding: 0px max(calc(50% - 600px));
+            padding: 0px max(calc(50% - 600px), 120px);
             justify-content: flex-start;
-            gap: clamp(32px, 8vw, 102px);
+            gap: clamp(16px, calc((100vw - 800px) * 86 / 600 + 16px), 102px);
         }
 
         ul {
@@ -653,7 +653,7 @@ footer {
             position: relative;
             height: 100%;
             width: auto;
-            gap: clamp(16px, 6vw, 72px);
+            gap: clamp(8px, calc((100vw - 800px) * 64 / 600 + 16px), 72px);
             background-color: #00000000;
         }
 
