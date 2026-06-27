@@ -10,6 +10,9 @@
         flex-direction: column;
         justify-content: center;
         text-align: left;
+    }
+
+    .header-text-aside {
         gap: 24px;
     }
 
@@ -42,7 +45,7 @@
 
     .title {
         font-weight: 400;
-        line-height: 110%;
+        line-height: 120%;
     }
 
     .name {
@@ -80,6 +83,10 @@
         flex-direction: row;
         justify-content: space-between;
 
+        .header-text {
+            width: 900px;
+        }
+
         p {
             font-size: 2rem;
             width: 95%;
@@ -91,14 +98,11 @@
 
         .section-author {
             padding: 16px 16px;
-            width: 45%;
+            /* width: 45%; */
 
             p {
                 font-size: 1rem;
                 text-align: left;
-            }
-            .name {
-                gap: 6px;
             }
         }
     }
