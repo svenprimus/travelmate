@@ -235,6 +235,11 @@ p {
         }
     }
 
+    .faint_radio_element_txt:has(.show-hidden:hover) .show-hidden:hover {
+        line-clamp: inherit;
+        -webkit-line-clamp: inherit;
+    }
+
     /* IMPORTANT to manage index for clickable URLs */
     .element_one {
         opacity: 1;
