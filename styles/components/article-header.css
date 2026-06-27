@@ -88,7 +88,7 @@
         justify-content: space-between;
 
         .header-text {
-            width: 900px;
+            max-width: 900px;
         }
 
         p {
@@ -101,7 +101,7 @@
 
         .section-author {
             padding: 16px 16px;
-            /* width: 45%; */
+            max-width: 275px;
 
             p {
                 font-size: 1rem;
