@@ -10,6 +10,9 @@
     /* light-green #4ea48733 */
     --color-background: rgba(78, 164, 135, 0.2);
 
+    /* very light-green ##4EA4874D */
+    --color-bg-rslider: rgba(78, 164, 135, 0.302);
+    
     /* brown #54370d */
     --text-color: rgb(84, 55, 13);
 
@@ -47,9 +50,11 @@
     /* #region faint-radio-slider */
     --fslider-height: 533px;
     --fslider-radio-size: 28px;
+    --rslider-radio-size: 22px;
     --fslider-radio-border-radius: 20px;
     --fslider-radio-highlight: #f1c953;
     --fslider-radio-gap: 22px;
+    --rslider-radio-gap: 8px;
     --fslider-radio-hover-w: 40px;
     /* #endregion faint-radio-slider */
 }

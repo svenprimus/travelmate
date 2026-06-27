@@ -16,6 +16,10 @@
         gap: 24px;
     }
 
+    p {
+        font-size: clamp(1.125rem, calc((100vw - 50rem) * (2 - 1.125) / 40) + 1.125rem, 2rem);
+    }
+
     h2 {
         line-height: 120%;
     }
@@ -57,7 +61,7 @@
 .header-facts {
     width: 100%;
     display: flex;
-    gap: clamp(16px, calc((100vw - 400px) * 16px / 1000px + 16px), 32px);
+    gap: clamp(16px, calc((100vw - 400px) * 16 / 1000 + 16px), 32px);
     flex-wrap: wrap;
 
     div {
@@ -84,11 +88,10 @@
         justify-content: space-between;
 
         .header-text {
-            width: 900px;
+            max-width: 900px;
         }
 
         p {
-            font-size: 2rem;
             width: 95%;
         }
 
@@ -98,7 +101,7 @@
 
         .section-author {
             padding: 16px 16px;
-            /* width: 45%; */
+            max-width: 275px;
 
             p {
                 font-size: 1rem;

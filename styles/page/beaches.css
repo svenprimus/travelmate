@@ -26,14 +26,259 @@
         }
     }
 }
+
+/* #region slider */
+.section-slider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    /* too old for school... f(x) = (x-x1) * (y2 - y1) / (x2 - x1) + y1 */
+    gap: clamp(37px, calc((100vw - 400px) * (64 - 37) / (1400 - 400) + 37px), 64px);
+
+    width: 100%;
+    overflow: hidden;
+
+    .radio_space {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: var(--fslider-radio-hover-w);
+        height: 100%;
+
+        padding-bottom: 20px;
+    }
+
+    .slider-cards {
+        display: flex;
+        align-items: flex-start;
+        height: 440px;
+
+        /* gap between radio buttons (+hover) is already sufficient */
+        /* gap: 0; */
+
+        .card-wrapper {
+            width: 100%;
+            height: 100%;
+
+            display: flex;
+            transition: all 250s ease-in-out;
+
+            .cards-element {
+                width: clamp(200px, calc((100vw - 800px) * 100 / 640) + 200px, 300px);
+                height: clamp(300px, calc((100vw - 800px) * 140 / 640) + 300px, 440px);
+                z-index: 1;
+
+                object-fit: cover;
+
+                box-shadow: -9px 5px 20px 0px #00000040;
+                border-radius: 16px;
+
+                transform-origin: 50% 50%;
+                transition: transform 250ms ease-in-out;
+            }
+        }
+
+        input {
+            z-index: 3;
+
+            appearance: none;
+            background-color: var(--color-bg-rslider);
+            width: var(--rslider-radio-size);
+            height: var(--rslider-radio-size);
+            border-radius: var(--fslider-radio-border-radius);
+        }
+
+        input:hover {
+            width: var(--fslider-radio-hover-w);
+            background-color: var(--color-main1);
+        }
+
+        /* set up selection */
+        input[type="radio"] {
+            display: grid;
+            place-content: center;
+        }
+
+        /* design selection */
+        input[type="radio"]::before {
+            content: "";
+            width: var(--fslider-radio-hover-w);
+            height: var(--rslider-radio-size);
+            border-radius: 20px;
+            transition: 120ms transform ease-in-out;
+
+            /* set the shadow "too big" (overflow circle) and still hide it */
+            box-shadow: inset 2em 2em var(--color-main1);
+            transform: scale(0);
+        }
+
+        /* show selection */
+        input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+    }
+}
+/* #endregion slider */
 /* #endregion content-main */
 
 /* #region media queries */
+@media screen and (max-width: 768px) {
+    .section-slider {
+        height: 440px;
+
+        .card-wrapper {
+            position: absolute;
+        }
+
+        .cards-element {
+            transform: perspective(250px) rotateY(10deg) scaleY(0.9) scaleX(0.9);
+        }
+
+        .slider-cards {
+            /* add radio functionality */
+            .radio_space:has(input[value="zero"]:checked) ~ .card-wrapper {
+                .ele-zero {
+                    transform: rotateY(0deg);
+                }
+                .ele-zero ~ .cards-element {
+                    transform: perspective(250px) rotateY(-10deg) scaleY(0.9) scaleX(0.9);
+                }
+            }
+
+            .radio_space:has(input[value="one"]:checked) ~ .card-wrapper {
+                .ele-one {
+                    transform: rotateY(0deg);
+                }
+                .ele-one ~ .cards-element {
+                    transform: perspective(250px) rotateY(-10deg) scaleY(0.9) scaleX(0.9);
+                }
+                .cards-element {
+                    right: calc(200px * 1);
+                }
+            }
+
+            .radio_space:has(input[value="two"]:checked) ~ .card-wrapper {
+                .ele-two {
+                    transform: rotateY(0deg);
+                }
+                .ele-two ~ .cards-element {
+                    transform: perspective(250px) rotateY(-10deg) scaleY(0.9) scaleX(0.9);
+                }
+                .cards-element {
+                    right: calc(200px * 2);
+                }
+            }
+
+            .radio_space:has(input[value="three"]:checked) ~ .card-wrapper {
+                .ele-three {
+                    transform: rotateY(0deg);
+                }
+                .ele-three ~ .cards-element {
+                    transform: perspective(250px) rotateY(-10deg) scaleY(0.9) scaleX(0.9);
+                }
+                .cards-element {
+                    right: calc(200px * 3);
+                }
+            }
+
+            .radio_space:has(input[value="four"]:checked) ~ .card-wrapper {
+                .ele-four {
+                    transform: rotateY(0deg);
+                }
+                .ele-four ~ .cards-element {
+                    transform: perspective(250px) rotateY(-10deg) scaleY(0.9) scaleX(0.9);
+                }
+                .cards-element {
+                    right: calc(200px * 4);
+                }
+            }
+        }
+    }
+}
+
 @media screen and (min-width: 769px) {
+    .section-slider {
+        /* vw 1440 -> 800 - should be height 540 -> 400, but give extra space for shadow */
+        height: clamp(400px, calc((100vw - 800px) * 180 / 640) + 400px, 580px);
+
+        .slider-cards {
+            .radio_space {
+                display: none;
+            }
+
+            .card-wrapper {
+                .cards-element {
+                    margin-inline: -50px;
+                    transform: perspective(250px) rotateY(10deg) scaleY(0.9) scaleX(0.9);
+                }
+
+                .cards-element:hover {
+                    transform: rotateY(0);
+                    z-index: 5;
+                }
+
+                .cards-element:hover ~ .cards-element {
+                    transform: perspective(250px) rotateY(-10deg) scaleY(0.9) scaleX(0.9);
+                    /* z-index: 0; */
+                }
+            }
+            /* #region slider-hover-index */
+            /* we want cards to stack from hovered card downwards, e.g.:                   */
+            /* cards   0 1 2 3 4                                                           */
+            /*             ^ hovered                                                       */
+            /* z-index 1 1 5 4 3                                                           */
+            /* index on left hand side doesnt matter, as they are build from left to right */
+
+            /* hover for ele-one */
+            .card-wrapper:has(:nth-child(1):hover) :nth-child(2) {
+                z-index: 4;
+            }
+            .card-wrapper:has(:nth-child(1):hover) :nth-child(3) {
+                z-index: 3;
+            }
+            .card-wrapper:has(:nth-child(1):hover) :nth-child(4) {
+                z-index: 2;
+            }
+            .card-wrapper:has(:nth-child(1):hover) :nth-child(5) {
+                z-index: 1;
+            }
+
+            /* hover for ele-two */
+            .card-wrapper:has(:nth-child(2):hover) :nth-child(3) {
+                z-index: 4;
+            }
+            .card-wrapper:has(:nth-child(2):hover) :nth-child(4) {
+                z-index: 3;
+            }
+            .card-wrapper:has(:nth-child(2):hover) :nth-child(5) {
+                z-index: 2;
+            }
+
+            /* hover for ele-three */
+            .card-wrapper:has(:nth-child(3):hover) :nth-child(4) {
+                z-index: 4;
+            }
+            .card-wrapper:has(:nth-child(3):hover) :nth-child(5) {
+                z-index: 3;
+            }
+            /* #region slider-hover-index */
+        }
+    }
+
     .section-article {
         article {
             gap: 88px;
         }
+    }
+}
+
+/* OPTIONAL media query */
+@media screen and (max-width: 319px) {
+    .section-slider {
+        gap: clamp(4px, calc(100vw * (37 - 4) / 319 + 4px), 37px);
     }
 }
 /* #endregion media queries */
