@@ -5,7 +5,7 @@ h1 {
     font-weight: 700;
     font-size: clamp(
         var(--f-size-h1-mobile),
-        calc((100vw - 25rem) * (4 - 2.5) / 27.5 + var(--f-size-h1-mobile)),
+        calc((100vw - 25rem) * (4 - 2.5) / (87.5 - 25) + var(--f-size-h1-mobile)),
         var(--f-size-h1-desk)
     );
 
@@ -18,7 +18,7 @@ h2 {
     font-weight: 600;
     font-size: clamp(
         var(--f-size-h2-mobile),
-        calc((100vw - 25rem) * (2.5 - 1.25) / 27.5 + var(--f-size-h2-mobile)),
+        calc((100vw - 25rem) * (2.5 - 1.25) / (87.5 - 25) + var(--f-size-h2-mobile)),
         var(--f-size-h2-desk)
     );
 
@@ -31,7 +31,7 @@ h3 {
     font-size: clamp(var(--f-size-h3-mobile), calc((var(--f-size-h3-desk) * 100vw / 840px)), var(--f-size-h3-desk));
     font-size: clamp(
         var(--f-size-h3-mobile),
-        calc((100vw - 25rem) * (2 - 1.25) / 27.5 + var(--f-size-h3-mobile)),
+        calc((100vw - 25rem) * (2 - 1.25) / (87.5 - 25) + var(--f-size-h3-mobile)),
         var(--f-size-h3-desk)
     );
 
@@ -45,7 +45,7 @@ h4 {
     font-size: clamp(var(--f-size-h4-mobile), calc((var(--f-size-h4-desk) * 100vw / 840px)), var(--f-size-h4-desk));
     font-size: clamp(
         var(--f-size-h4-mobile),
-        calc((100vw - 25rem) * (1.125 - 1) / 27.5 + var(--f-size-h4-mobile)),
+        calc((100vw - 25rem) * (1.125 - 1) / (87.5 - 25) + var(--f-size-h4-mobile)),
         var(--f-size-h4-desk)
     );
     color: var(--text-color);
@@ -59,7 +59,7 @@ a {
     font-size: clamp(var(--f-size-p-mobile), calc((var(--f-size-p-desk) * 100vw / 840px)), var(--f-size-p-desk));
     font-size: clamp(
         var(--f-size-p-mobile),
-        calc((100vw - 25rem) * (1.5 - 1) / 27.5 + var(--f-size-p-mobile)),
+        calc((100vw - 25rem) * (1.5 - 1) / (87.5 - 25) + var(--f-size-p-mobile)),
         var(--f-size-p-desk)
     );
     color: var(--text-color);
