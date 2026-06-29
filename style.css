@@ -50,7 +50,7 @@ p {
 /* #region content-main */
 .section-landing {
     padding: 0 calc(50% - 720px);
-    padding-bottom: 40px;
+    margin-bottom: 40px;
     height: 540px;
 
     position: relative;
@@ -76,7 +76,7 @@ p {
     .landing-icon {
         /* school was a while ago... f(x) = (x-x1) * (y2 - y1) / (x2 - x1) + y1 */
         left: min(clamp(50px, calc((100vw - 400px) * 400 / 550 + 50px), 450px), 450px);
-        top: clamp(40%, calc((100vw - 400px) * 15 / 1040 + 40%), 55%);
+        top: clamp(90px, calc((100vw - 400px) * 135 / 1040 + 90px), 225px);
     }
 
     .landing-txt {
@@ -409,10 +409,16 @@ p {
 @media screen and (min-width: 1441px) {
     .section-landing {
         padding: 0 calc(50% - 720px);
+
         .landing-icon {
             /* school was a while ago... f(x) = (x-x1) * (y2 - y1) / (x2 - x1) + y1 */
             left: 450px;
-            top: 231px;
+            top: 225px;
+        }
+
+        .landing-overlay-bg {
+            /* left: max(calc(50% - 720px), 0); */
+            left: calc(50% - 720px);
         }
     }
 }
