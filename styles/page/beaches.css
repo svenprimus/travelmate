@@ -54,7 +54,7 @@
     .slider-cards {
         display: flex;
         align-items: flex-start;
-        height: 440px;
+        height: clamp(380px, calc((100vw - 800px) * 200 / 640) + 380px, 580px);
 
         /* gap between radio buttons (+hover) is already sufficient */
         /* gap: 0; */
@@ -127,8 +127,6 @@
 /* #region media queries */
 @media screen and (max-width: 768px) {
     .section-slider {
-        height: 440px;
-
         .card-wrapper {
             position: absolute;
         }

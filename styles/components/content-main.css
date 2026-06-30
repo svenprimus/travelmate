@@ -12,7 +12,6 @@
 /* |  |<- 20| Content (mobi) | 20->|  | */
 
 .content-main-section {
-    height: 100%;
     width: 100%;
     /* padding desktop/mobile top/bottom 80px -> 40px & left/right 120px -> 20px */
     padding: clamp(20px, calc((100vw - 400px) * (40 - 20) / 820 + 20px), 40px)
