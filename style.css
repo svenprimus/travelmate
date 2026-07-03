@@ -90,7 +90,7 @@ p {
 }
 
 .section-highlights {
-    height: 100%;
+    height: calc(2 * clamp(20px, calc((100vw - 400px) * (40 - 20) / 820 + 20px), 40px) + 782px);
     width: 100%;
 
     display: flex;
