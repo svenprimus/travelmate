@@ -1,15 +1,16 @@
 /* #region footer */
 footer {
     background-color: var(--color-main1);
-    height: 134px;
-    margin-bottom: 88px;
     width: 100%;
-    padding: 24px clamp(30px, calc((100vw - 400px) * 96 / 840 + 24px), 120px);
     display: flex;
     align-items: center;
 
-    div {
+    > div {
         width: 100%;
+        height: 222px;
+        padding: 24px clamp(30px, calc((100vw - 400px) * 96 / 840 + 24px), 120px);
+        padding-bottom: 112px;
+
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
@@ -53,7 +54,6 @@ footer {
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
-        width: 200px;
         gap: clamp(8px, 3.5vw, 16px);
 
         img {
@@ -70,18 +70,21 @@ footer {
 /* #region media queries */
 @media screen and (min-width: 1441px) {
     footer {
-        padding: 24px max(calc(50% - 720px + 120px), 120px);
+        > div {
+            padding: 24px max(calc(50% - 720px + 120px), 120px);
+        }
     }
 }
 
 @media screen and (min-width: 769px) {
     footer {
-        height: 152px;
         margin-bottom: 0;
         align-items: center;
 
-        div {
+        > div {
+            height: 152px;
             align-items: center;
+            padding-bottom: 24px;
         }
 
         .footer-copyright ul {
@@ -111,10 +114,11 @@ footer {
 
 @media screen and (min-width: 320px) and (max-width: 374px) {
     footer {
-        margin-bottom: clamp(20px, calc(100vw * 68 / 319 + 20px), 88px);
-
         div {
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             gap: 5px;
 
             .footer-copyright {
@@ -132,7 +136,6 @@ footer {
             .footer-social {
                 flex-direction: row;
                 align-items: space-between;
-                width: 100%;
             }
         }
     }
@@ -141,12 +144,14 @@ footer {
 /* OPTIONAL media query */
 @media screen and (max-width: 319px) {
     footer {
-        margin-bottom: clamp(20px, calc(100vw * 68 / 319 + 20px), 88px);
-        height: clamp(80px, calc(100vw * 54 / 319 + 80px), 134px);
-        padding: 0;
-
-        div {
+        > div {
+            height: clamp(168px, calc(100vw * 54 / 319 + 168px), 222px);
+            padding: 0;
+            padding-bottom: clamp(20px, calc(100vw * 68 / 319 + 20px), 88px);
             flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
             gap: 5px;
             .footer-copyright {
                 align-items: center;
@@ -168,8 +173,7 @@ footer {
             .footer-social {
                 flex-direction: row;
                 justify-content: center;
-                /* align-items: space-between; */
-                align-items: flex-start;
+                align-items: space-between;
 
                 width: 100%;
                 img {
